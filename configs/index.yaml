@@ -1,0 +1,8 @@
+flows:
+  - summary: Metro - Station Code Based Flow
+    id: metro-flow-1
+    shouldDispaly: true
+    input:
+      $ref: ./metro-flow-1/input.yaml
+    protocolCalls:
+      $ref: ./metro-flow-1/protocolCalls.yaml
