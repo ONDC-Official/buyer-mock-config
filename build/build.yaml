@@ -232,7 +232,7 @@ flows:
           errorText: Order Id is required
           required: true
           summary: Describes the ID of the order.
-    protocolCalls:
+    calls:
       search_route:
         type: search
         target: GATEWAY
