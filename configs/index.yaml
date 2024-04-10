@@ -4,5 +4,5 @@ flows:
     shouldDispaly: true
     input:
       $ref: ./metro-flow-1/input.yaml
-    protocolCalls:
+    calls:
       $ref: ./metro-flow-1/protocolCalls.yaml
