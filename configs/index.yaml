@@ -1,7 +1,7 @@
 flows:
   - summary: InterCity(Bus) - Station Code Based Flow
     id: intercity-flow-1
-    shouldDispaly: false
+    shouldDispaly: true
     input:
       $ref: ./intercity-flow-1/input.yaml
     calls:
