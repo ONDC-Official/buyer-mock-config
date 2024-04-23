@@ -187,6 +187,7 @@ flows:
     calls:
       search_route:
         type: search
+        target: GATEWAY
         executed: false
         shouldRender: true
         config: search_route
