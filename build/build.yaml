@@ -3,7 +3,7 @@ flows:
     id: intercity-flow-1
     shouldDispaly: true
     input:
-      search_route:
+      search_bus:
         - name: Vehicle Category
           key: vehicleCategaory
           type: text
@@ -20,7 +20,7 @@ flows:
               STATIC_TERMS: >-
                 https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
           errorText: Payment tags is required
-      search_trip:
+      search_station:
         - name: BPP URI
           key: bpp_uri
           type: select
@@ -49,6 +49,12 @@ flows:
           extractionPathReplace: ${bpp_id}
           extractionPathReplaceWith: formData.bpp_id
           errorText: End stop is required
+      search_service:
+        - name: Fulfillment Id
+          key: filfillmentId
+          type: select
+          extractionPath: 'businessPayload[]{key: bpp_id, value: bpp_id}'
+          errorText: Fulfillment Id is requried
       select:
         - name: BPP URI
           key: bpp_uri
@@ -185,38 +191,38 @@ flows:
                 https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
           errorText: Payment Tags is required
     calls:
-      search_route:
+      search_bus:
         type: search
         target: GATEWAY
         executed: false
         shouldRender: true
-        config: search_route
-        nextRequest: on_search_route
+        config: search_bus
+        nextRequest: on_search_bus
         preRequest: null
         isCollapsed: false
-      on_search_route:
+      on_search_bus:
         type: on_search
         executed: false
         shouldRender: false
-        config: on_search_route
-        nextRequest: search_trip
-        preRequest: search_route
+        config: on_search_bus
+        nextRequest: search_station
+        preRequest: search_bus
         isCollapsed: false
-      search_trip:
+      search_station:
         type: search
         executed: false
         shouldRender: false
-        config: search_trip
-        nextRequest: on_search_trip
-        preRequest: on_search_route
+        config: search_station
+        nextRequest: on_search_station
+        preRequest: on_search_bus
         isCollapsed: false
-      on_search_trip:
+      on_search_station:
         type: on_search
         executed: false
         shouldRender: false
-        config: on_search_trip
+        config: on_search_station
         nextRequest: select
-        preRequest: search_trip
+        preRequest: search_station
         isCollapsed: false
       select:
         type: select
@@ -224,7 +230,7 @@ flows:
         shouldRender: false
         config: select
         nextRequest: on_select
-        preRequest: on_search_trip
+        preRequest: on_search_station
         isCollapsed: false
       on_select:
         type: on_select

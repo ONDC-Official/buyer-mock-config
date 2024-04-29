@@ -1,4 +1,4 @@
-search_route:
+search_bus:
   - name: "Vehicle Category"
     key: "vehicleCategaory"
     type: "text"
@@ -15,7 +15,7 @@ search_route:
         STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
     errorText: "Payment tags is required"
 
-search_trip:
+search_station:
   - name: "BPP URI"
     key: "bpp_uri"
     type: "select"
@@ -40,6 +40,13 @@ search_trip:
     extractionPathReplace: "${bpp_id}"
     extractionPathReplaceWith: formData.bpp_id
     errorText: "End stop is required"
+
+search_service:
+  - name: "Fulfillment Id"
+    key: "filfillmentId"
+    type: "select"
+    extractionPath: "businessPayload[]{key: bpp_id, value: bpp_id}"
+    errorText: "Fulfillment Id is requried"
 
 select:
   - name: "BPP URI"

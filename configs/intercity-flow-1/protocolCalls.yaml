@@ -1,38 +1,38 @@
-search_route:
+search_bus:
   type: "search"
   target: "GATEWAY"
   executed: false
   shouldRender: true
-  config: "search_route"
-  nextRequest: "on_search_route"
+  config: "search_bus"
+  nextRequest: "on_search_bus"
   preRequest: null
   isCollapsed: false
 
-on_search_route:
+on_search_bus:
   type: "on_search"
   executed: false
   shouldRender: false
-  config: "on_search_route"
-  nextRequest: "search_trip"
-  preRequest: "search_route"
+  config: "on_search_bus"
+  nextRequest: "search_station"
+  preRequest: "search_bus"
   isCollapsed: false
 
-search_trip:
+search_station:
   type: "search"
   executed: false
   shouldRender: false
-  config: "search_trip"
-  nextRequest: "on_search_trip"
-  preRequest: "on_search_route"
+  config: "search_station"
+  nextRequest: "on_search_station"
+  preRequest: "on_search_bus"
   isCollapsed: false
 
-on_search_trip:
+on_search_station:
   type: "on_search"
   executed: false
   shouldRender: false
-  config: "on_search_trip"
+  config: "on_search_station"
   nextRequest: "select"
-  preRequest: "search_trip"
+  preRequest: "search_station"
   isCollapsed: false
 
 select:
@@ -41,7 +41,7 @@ select:
   shouldRender: false
   config: "select"
   nextRequest: "on_select"
-  preRequest: "on_search_trip"
+  preRequest: "on_search_station"
   isCollapsed: false
 
 on_select:
