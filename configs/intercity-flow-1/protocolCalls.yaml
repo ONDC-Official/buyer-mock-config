@@ -31,8 +31,26 @@ on_search_station:
   executed: false
   shouldRender: false
   config: "on_search_station"
-  nextRequest: "select"
+  nextRequest: "search_service"
   preRequest: "search_station"
+  isCollapsed: false
+
+search_service:
+  type: "search"
+  executed: false
+  shouldRender: false
+  config: "search_service"
+  nextRequest: "on_search_service"
+  preRequest: "on_search_station"
+  isCollapsed: false
+
+on_search_service:
+  type: "on_search"
+  executed: false
+  shouldRender: false
+  config: "on_search_service"
+  nextRequest: "select"
+  preRequest: "search_service"
   isCollapsed: false
 
 select:
@@ -41,7 +59,7 @@ select:
   shouldRender: false
   config: "select"
   nextRequest: "on_select"
-  preRequest: "on_search_station"
+  preRequest: "on_search_service"
   isCollapsed: false
 
 on_select:

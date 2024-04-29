@@ -51,10 +51,37 @@ flows:
           errorText: End stop is required
       search_service:
         - name: Fulfillment Id
-          key: filfillmentId
+          key: fulfillmentId
           type: select
-          extractionPath: 'businessPayload[]{key: bpp_id, value: bpp_id}'
+          extractionPath: 'businessPayload[].items[]{key: fulfillmentId, value: fulfillmentId}'
           errorText: Fulfillment Id is requried
+        - name: Start Stop Type
+          key: startStopType
+          type: select
+          extractionPath: 'businessPayload[].items[]{key: type, value: type}'
+          errorText: Start Stop Type required
+        - name: End Stop Type
+          key: endStopType
+          type: select
+          extractionPath: 'businessPayload[].items[]{key: type, value: type}'
+          errorText: End Stop Type required
+        - name: Provider Id
+          key: providerId
+          type: select
+          extractionPath: 'businessPayload[].items[]{key: providerId, value: providerId}'
+          errorText: Provider Id is required
+        - name: Payment Tags
+          key: paymentTagsSearchService
+          type: multiline
+          defaultValue:
+            BUYER_FINDER_FEES:
+              BUYER_FINDER_FEES_TYPE: percent-annualized
+              BUYER_FINDER_FEES_PERCENTAGE: '1'
+            SETTLEMENT_TERMS:
+              DELAY_INTEREST: 2.5
+              STATIC_TERMS: >-
+                https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+          errorText: Payment tags is required
       select:
         - name: BPP URI
           key: bpp_uri
@@ -221,8 +248,24 @@ flows:
         executed: false
         shouldRender: false
         config: on_search_station
-        nextRequest: select
+        nextRequest: search_service
         preRequest: search_station
+        isCollapsed: false
+      search_service:
+        type: search
+        executed: false
+        shouldRender: false
+        config: search_service
+        nextRequest: on_search_service
+        preRequest: on_search_station
+        isCollapsed: false
+      on_search_service:
+        type: on_search
+        executed: false
+        shouldRender: false
+        config: on_search_service
+        nextRequest: select
+        preRequest: search_service
         isCollapsed: false
       select:
         type: select
@@ -230,7 +273,7 @@ flows:
         shouldRender: false
         config: select
         nextRequest: on_select
-        preRequest: on_search_station
+        preRequest: on_search_service
         isCollapsed: false
       on_select:
         type: on_select

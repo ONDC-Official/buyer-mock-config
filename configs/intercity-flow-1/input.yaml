@@ -43,10 +43,36 @@ search_station:
 
 search_service:
   - name: "Fulfillment Id"
-    key: "filfillmentId"
+    key: "fulfillmentId"
     type: "select"
-    extractionPath: "businessPayload[]{key: bpp_id, value: bpp_id}"
+    extractionPath: "businessPayload[].items[]{key: fulfillmentId, value: fulfillmentId}"
     errorText: "Fulfillment Id is requried"
+  - name: "Start Stop Type"
+    key: "startStopType"
+    type: "select"
+    extractionPath: "businessPayload[].items[]{key: type, value: type}"
+    errorText: "Start Stop Type required"
+  - name: "End Stop Type"
+    key: "endStopType"
+    type: "select"
+    extractionPath: "businessPayload[].items[]{key: type, value: type}"
+    errorText: "End Stop Type required"
+  - name: "Provider Id"
+    key: "providerId"
+    type: "select"
+    extractionPath: "businessPayload[].items[]{key: providerId, value: providerId}"
+    errorText: "Provider Id is required"
+  - name: "Payment Tags"
+    key: "paymentTagsSearchService"
+    type: "multiline"
+    defaultValue:
+      BUYER_FINDER_FEES:
+        BUYER_FINDER_FEES_TYPE: percent-annualized
+        BUYER_FINDER_FEES_PERCENTAGE: "1"
+      SETTLEMENT_TERMS:
+        DELAY_INTEREST: 2.5
+        STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+    errorText: "Payment tags is required"
 
 select:
   - name: "BPP URI"
