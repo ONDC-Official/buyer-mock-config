@@ -262,6 +262,6 @@ flows:
         executed: false
         shouldRender: false
         config: on_confirm
-        nextRequest: status
+        nextRequest: null
         preRequest: confirm
         isCollapsed: false
