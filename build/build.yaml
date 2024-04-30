@@ -94,7 +94,7 @@ flows:
           errorText: Quantity is required
       init:
         - name: Payment Status
-          key: paymentStatus
+          key: paymentStatusInit
           type: select
           defaultOptions:
             - key: PAID
@@ -103,7 +103,7 @@ flows:
               value: NOT-PAID
           errorText: Please select a field
         - name: Payment Type
-          key: paymentType
+          key: paymentTypeInit
           type: select
           defaultValue: PRE-ORDER
           defaultOptions:
@@ -133,12 +133,28 @@ flows:
       confirm:
         - name: Payment Status
           key: paymentStatusConfirm
-          type: text
-          errorText: Payment Status is required
+          type: select
+          defaultOptions:
+            - key: PAID
+              value: PAID
+            - key: NOT-PAID
+              value: NOT-PAID
+          errorText: Please select a field
         - name: Payment Type
           key: paymentTypeConfirm
-          type: text
-          errorText: Payment Type is required
+          type: select
+          defaultValue: PRE-ORDER
+          defaultOptions:
+            - key: PRE-ORDER
+              value: PRE-ORDER
+            - key: PRE-FULFILLMENT
+              value: PRE-FULFILLMENT
+            - key: ON-FULFILLMENT
+              value: ON-FULFILLMENT
+            - key: POST-FULFILLMENT
+              value: POST-FULFILLMENT
+            - key: ON-ORDER
+              value: ON-ORDER
         - name: Payment Tags
           key: paymentTagsConfirm
           type: multiline
