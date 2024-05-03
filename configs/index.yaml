@@ -1,8 +1,8 @@
 flows:
-  - summary: Metro - Station Code Based Flow
-    id: metro-flow-1
+  - summary: IntraCity - Code Based Flow
+    id: intracity-flow-1
     shouldDispaly: true
     input:
-      $ref: ./metro-flow-1/input.yaml
+      $ref: ./intracity-flow-1/input.yaml
     calls:
-      $ref: ./metro-flow-1/protocolCalls.yaml
+      $ref: ./intracity-flow-1/protocolCalls.yaml
