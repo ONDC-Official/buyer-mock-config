@@ -1,0 +1,108 @@
+search_bus:
+  type: "search"
+  target: "GATEWAY"
+  executed: false
+  shouldRender: true
+  config: "search_bus"
+  nextRequest: "on_search_bus"
+  preRequest: null
+  isCollapsed: false
+
+on_search_bus:
+  type: "on_search"
+  executed: false
+  shouldRender: false
+  config: "on_search_bus"
+  nextRequest: "search_station"
+  preRequest: "search_bus"
+  isCollapsed: false
+
+search_station:
+  type: "search"
+  executed: false
+  shouldRender: false
+  config: "search_station"
+  nextRequest: "on_search_station"
+  preRequest: "on_search_bus"
+  isCollapsed: false
+
+on_search_station:
+  type: "on_search"
+  executed: false
+  shouldRender: false
+  config: "on_search_station"
+  nextRequest: "search_service"
+  preRequest: "search_station"
+  isCollapsed: false
+
+search_service:
+  type: "search"
+  executed: false
+  shouldRender: false
+  config: "search_service"
+  nextRequest: "on_search_service"
+  preRequest: "on_search_station"
+  isCollapsed: false
+
+on_search_service:
+  type: "on_search"
+  executed: false
+  shouldRender: false
+  config: "on_search_service"
+  nextRequest: "select"
+  preRequest: "search_service"
+  isCollapsed: false
+
+select:
+  type: "select"
+  executed: false
+  shouldRender: false
+  config: "select"
+  nextRequest: "on_select"
+  preRequest: "on_search_service"
+  isCollapsed: false
+
+on_select:
+  type: "on_select"
+  executed: false
+  shouldRender: false
+  config: "on_select"
+  nextRequest: "init"
+  preRequest: "select"
+  isCollapsed: false
+
+init:
+  type: "init"
+  executed: false
+  shouldRender: false
+  config: "init"
+  nextRequest: "on_init"
+  preRequest: "on_select"
+  isCollapsed: false
+
+on_init:
+  type: "on_init"
+  executed: false
+  shouldRender: false
+  config: "on_init"
+  nextRequest: "confirm"
+  preRequest: "init"
+  isCollapsed: false
+
+confirm:
+  type: "confirm"
+  executed: false
+  shouldRender: false
+  config: "confirm"
+  nextRequest: "on_confirm"
+  preRequest: "confirm"
+  isCollapsed: false
+
+on_confirm:
+  type: "on_confirm"
+  executed: false
+  shouldRender: false
+  config: "on_confirm"
+  nextRequest: null
+  preRequest: "confirm"
+  isCollapsed: false
