@@ -14,3 +14,11 @@ flows:
       $ref: ./intracity-flow-1/input.yaml
     calls:
       $ref: ./intracity-flow-1/protocolCalls.yaml
+
+  - summary: InterCity(Bus) - Station Code Based Flow
+    id: intercity-flow-1
+    shouldDispaly: true
+    input:
+      $ref: ./intercity-flow-1/input.yaml
+    calls:
+      $ref: ./intercity-flow-1/protocolCalls.yaml
