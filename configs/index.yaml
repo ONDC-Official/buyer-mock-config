@@ -6,3 +6,10 @@ flows:
       $ref: ./personal-loan-flow-1/input.yaml
     calls:
       $ref: ./personal-loan-flow-1/protocolCalls.yaml
+  - summary: Marine Insurance
+    id: marine-insurance-flow-1
+    shouldDispaly: true
+    input:
+      $ref: ./marine-insurance-flow-1/input.yaml
+    calls:
+      $ref: ./marine-insurance-flow-1/protocolCalls.yaml
