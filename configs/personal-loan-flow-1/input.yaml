@@ -41,14 +41,14 @@ personal_info_form:
     type: "form"
     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
     extractionPathReplace: "${bpp_id}"
-    extractionPathReplaceWith: formData.bpp_id
+    extractionPathReplaceWith: data.session.bpp_id
     summary: Need to be filled to get the submission id
   - name: "ProviderId"
     key: "providerId"
     type: "select"
     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: providerId, value: providerId}"
     extractionPathReplace: "${bpp_id}"
-    extractionPathReplaceWith: formData.bpp_id
+    extractionPathReplaceWith: data.session.bpp_id
     errorText: "Provider Id is required"
     required: true
     summary: This refers to the unique id of the provider whose catalog items have been selected.
@@ -57,7 +57,7 @@ personal_info_form:
     type: "select"
     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: id, value: id}"
     extractionPathReplace: "${bpp_id}"
-    extractionPathReplaceWith: formData.bpp_id
+    extractionPathReplaceWith: data.session.bpp_id
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -66,7 +66,7 @@ personal_info_form:
     type: "select"
     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: itemId, value: itemId}"
     extractionPathReplace: "${bpp_id}"
-    extractionPathReplaceWith: formData.bpp_id
+    extractionPathReplaceWith: data.session.bpp_id
     errorText: "item Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
