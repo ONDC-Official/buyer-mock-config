@@ -30,19 +30,16 @@ flows:
         - name: BPP URI
           key: bpp_uri
           type: select
-          extractionPath: 'businessPayload[]{key: bpp_uri, value: bpp_uri}'
+          extractionPath: >-
+            businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value:
+            bpp_uri}
+          extractionPathReplace: ${bpp_id}
+          extractionPathReplaceWith: data.session.bpp_id
           errorText: BPP URI is required
           required: true
           summary: >-
             The subscriber URL of the Seller App (BPP) is the endpoint that
             accepts callbacks from the Buyer App (BAP).
-        - name: BPP ID
-          key: bpp_id
-          type: select
-          extractionPath: 'businessPayload[]{key: bpp_id, value: bpp_id}'
-          errorText: BPP ID is required
-          required: true
-          summary: It explains the Explains the subscriber of the Seller App (BPP).
         - name: Form Url
           key: personalFormUrl
           type: form
