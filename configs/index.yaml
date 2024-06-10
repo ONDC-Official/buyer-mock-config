@@ -13,3 +13,10 @@ flows:
       $ref: ./marine-insurance-flow-1/input.yaml
     calls:
       $ref: ./marine-insurance-flow-1/protocolCalls.yaml
+  - summary: Invoice Based Loans
+    id: invoice-loan-flow-1
+    shouldDispaly: true
+    input:
+      $ref: ./invoice-loan-flow-1/input.yaml
+    calls:
+      $ref: ./invoice-loan-flow-1/protocolCalls.yaml
