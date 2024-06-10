@@ -862,6 +862,7 @@ flows:
             value: formUrl}
           extractionPathReplace: ${bpp_id}
           extractionPathReplaceWith: data.session.bpp_id
+          submissionIdFieldKey: personalInfoSubmissionId
           summary: Need to be filled to get the submission id
         - name: ProviderId
           key: providerId
