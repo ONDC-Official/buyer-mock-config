@@ -1122,7 +1122,7 @@ flows:
         shouldRender: false
         config: on_search_1
         nextRequest: search_2
-        preRequest: select_loan
+        preRequest: search_1
         isCollapsed: false
       search_2:
         type: search
