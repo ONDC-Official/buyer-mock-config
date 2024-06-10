@@ -71,7 +71,7 @@ personal_info_form:
     required: true
     summary: Provider Id is the uniqure id of the seller
 
-select_loan:
+search_1:
   - name: Submission ID
     key: personalInfoSubmissionId
     type: "text"
@@ -79,7 +79,7 @@ select_loan:
     required: true
     summary: Submission Id revieved after form submission
 
-select_approval:
+search_2:
   - name: "Consent Status"
     key: "consentStatus"
     type: "select"
