@@ -1093,7 +1093,7 @@ flows:
         config: search
         nextRequest: on_search
         preRequest: null
-        isCollapsed: false
+        isCollapsed: true
       on_search:
         type: on_search
         executed: false
@@ -1101,7 +1101,7 @@ flows:
         config: on_search
         nextRequest: personal_info_form
         preRequest: search
-        isCollapsed: false
+        isCollapsed: true
       personal_info_form:
         type: form
         executed: false
@@ -1109,7 +1109,7 @@ flows:
         config: personal_info_form
         nextRequest: search_1
         preRequest: on_search
-        isCollapsed: false
+        isCollapsed: true
       search_1:
         type: search
         target: NP
@@ -1118,7 +1118,7 @@ flows:
         config: search_1
         nextRequest: on_search_1
         preRequest: personal_info_form
-        isCollapsed: false
+        isCollapsed: true
       on_search_1:
         type: on_search
         executed: false
@@ -1126,7 +1126,7 @@ flows:
         config: on_search_1
         nextRequest: search_2
         preRequest: search_1
-        isCollapsed: false
+        isCollapsed: true
       search_2:
         type: search
         target: NP
@@ -1135,7 +1135,7 @@ flows:
         config: search_2
         nextRequest: on_search_2
         preRequest: on_search_1
-        isCollapsed: false
+        isCollapsed: true
       on_search_2:
         type: on_search
         executed: false
@@ -1143,7 +1143,7 @@ flows:
         config: on_search_2
         nextRequest: loan_amount_adjust_form
         preRequest: search_2
-        isCollapsed: false
+        isCollapsed: true
       loan_amount_adjust_form:
         type: form
         executed: false
@@ -1151,7 +1151,7 @@ flows:
         config: loan_amount_adjust_form
         nextRequest: select_after_amount_adjust
         preRequest: on_search_2
-        isCollapsed: false
+        isCollapsed: true
       select_after_amount_adjust:
         type: select
         target: NP
@@ -1160,7 +1160,7 @@ flows:
         config: select_after_amount_adjust
         nextRequest: on_select_after_amount_adjust
         preRequest: loan_amount_adjust_form
-        isCollapsed: false
+        isCollapsed: true
       on_select_after_amount_adjust:
         type: on_select
         executed: false
@@ -1168,7 +1168,7 @@ flows:
         config: on_select_after_amount_adjust
         nextRequest: kyc_form
         preRequest: select_after_amount_adjust
-        isCollapsed: false
+        isCollapsed: true
       kyc_form:
         type: form
         executed: false
@@ -1176,7 +1176,7 @@ flows:
         config: kyc_form
         nextRequest: init_kyc
         preRequest: on_select_after_amount_adjust
-        isCollapsed: false
+        isCollapsed: true
       init_kyc:
         type: init
         target: NP
@@ -1185,7 +1185,7 @@ flows:
         config: init_kyc
         nextRequest: on_init_kyc
         preRequest: kyc_form
-        isCollapsed: false
+        isCollapsed: true
       on_init_kyc:
         type: on_init
         executed: false
@@ -1193,7 +1193,7 @@ flows:
         config: on_init_kyc
         nextRequest: account_details_form
         preRequest: init_kyc
-        isCollapsed: false
+        isCollapsed: true
       account_details_form:
         type: form
         executed: false
@@ -1201,7 +1201,7 @@ flows:
         config: account_details_form
         nextRequest: init_personal_loan
         preRequest: on_init_kyc
-        isCollapsed: false
+        isCollapsed: true
       init_personal_loan:
         type: init
         target: NP
@@ -1210,7 +1210,7 @@ flows:
         config: init_personal_loan
         nextRequest: on_init_personal_loan
         preRequest: account_details_form
-        isCollapsed: false
+        isCollapsed: true
       on_init_personal_loan:
         type: on_init
         executed: false
@@ -1218,7 +1218,7 @@ flows:
         config: on_init_personal_loan
         nextRequest: e_mandate_details_form
         preRequest: init_personal_loan
-        isCollapsed: false
+        isCollapsed: true
       e_mandate_details_form:
         type: form
         executed: false
@@ -1226,7 +1226,7 @@ flows:
         config: e_mandate_details_form
         nextRequest: init_with_account_details
         preRequest: on_init_personal_loan
-        isCollapsed: false
+        isCollapsed: true
       init_with_account_details:
         type: init
         target: NP
@@ -1235,7 +1235,7 @@ flows:
         config: init_with_account_details
         nextRequest: on_init_with_account_details
         preRequest: e_mandate_details_form
-        isCollapsed: false
+        isCollapsed: true
       on_init_with_account_details:
         type: on_init
         executed: false
@@ -1243,7 +1243,7 @@ flows:
         config: on_init_with_account_details
         nextRequest: loan_agreement_form
         preRequest: init_with_account_details
-        isCollapsed: false
+        isCollapsed: true
       loan_agreement_form:
         type: form
         executed: false
@@ -1251,7 +1251,7 @@ flows:
         config: loan_agreement_form
         nextRequest: confirm
         preRequest: on_init_with_account_details
-        isCollapsed: false
+        isCollapsed: true
       confirm:
         type: confirm
         target: NP
@@ -1260,7 +1260,7 @@ flows:
         config: confirm
         nextRequest: on_confirm
         preRequest: loan_agreement_form
-        isCollapsed: false
+        isCollapsed: true
       on_confirm:
         type: on_confirm
         executed: false
@@ -1268,7 +1268,7 @@ flows:
         config: on_confirm
         nextRequest: update
         preRequest: confirm
-        isCollapsed: false
+        isCollapsed: true
       update:
         type: update
         target: NP
@@ -1277,7 +1277,7 @@ flows:
         config: update
         nextRequest: on_update
         preRequest: on_confirm
-        isCollapsed: false
+        isCollapsed: true
       on_update:
         type: on_update
         executed: false
@@ -1285,7 +1285,7 @@ flows:
         config: on_update
         nextRequest: status
         preRequest: update
-        isCollapsed: false
+        isCollapsed: true
       status:
         type: status
         target: NP
@@ -1294,7 +1294,7 @@ flows:
         config: status
         nextRequest: on_status
         preRequest: on_update
-        isCollapsed: false
+        isCollapsed: true
       on_status:
         type: on_status
         executed: false
@@ -1302,4 +1302,4 @@ flows:
         config: on_status
         nextRequest: null
         preRequest: status
-        isCollapsed: false
+        isCollapsed: true

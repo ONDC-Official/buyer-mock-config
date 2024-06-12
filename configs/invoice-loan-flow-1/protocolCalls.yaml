@@ -6,7 +6,7 @@ search:
   config: "search"
   nextRequest: "on_search"
   preRequest: null
-  isCollapsed: false
+  isCollapsed: true
 
 on_search:
   type: "on_search"
@@ -15,7 +15,7 @@ on_search:
   config: "on_search"
   nextRequest: "personal_info_form"
   preRequest: "search"
-  isCollapsed: false
+  isCollapsed: true
 
 personal_info_form:
   type: "form"
@@ -24,7 +24,7 @@ personal_info_form:
   config: "personal_info_form"
   nextRequest: "search_1"
   preRequest: "on_search"
-  isCollapsed: false
+  isCollapsed: true
 
 search_1:
   type: "search"
@@ -34,7 +34,7 @@ search_1:
   config: "search_1"
   nextRequest: "on_search_1"
   preRequest: "personal_info_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_search_1:
   type: "on_search"
@@ -43,7 +43,7 @@ on_search_1:
   config: "on_search_1"
   nextRequest: search_2
   preRequest: "search_1"
-  isCollapsed: false
+  isCollapsed: true
 
 search_2:
   type: "search"
@@ -53,7 +53,7 @@ search_2:
   config: "search_2"
   nextRequest: "on_search_2"
   preRequest: "on_search_1"
-  isCollapsed: false
+  isCollapsed: true
 
 on_search_2:
   type: "on_search"
@@ -62,7 +62,7 @@ on_search_2:
   config: "on_search_2"
   nextRequest: loan_amount_adjust_form
   preRequest: "search_2"
-  isCollapsed: false
+  isCollapsed: true
 
 loan_amount_adjust_form:
   type: "form"
@@ -71,7 +71,7 @@ loan_amount_adjust_form:
   config: "loan_amount_adjust_form"
   nextRequest: select_after_amount_adjust
   preRequest: "on_search_2"
-  isCollapsed: false
+  isCollapsed: true
 
 select_after_amount_adjust:
   type: "select"
@@ -81,7 +81,7 @@ select_after_amount_adjust:
   config: "select_after_amount_adjust"
   nextRequest: "on_select_after_amount_adjust"
   preRequest: "loan_amount_adjust_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_select_after_amount_adjust:
   type: "on_select"
@@ -90,7 +90,7 @@ on_select_after_amount_adjust:
   config: "on_select_after_amount_adjust"
   nextRequest: kyc_form
   preRequest: "select_after_amount_adjust"
-  isCollapsed: false
+  isCollapsed: true
 
 kyc_form:
   type: "form"
@@ -99,7 +99,7 @@ kyc_form:
   config: "kyc_form"
   nextRequest: init_kyc
   preRequest: "on_select_after_amount_adjust"
-  isCollapsed: false
+  isCollapsed: true
 
 init_kyc:
   type: "init"
@@ -109,7 +109,7 @@ init_kyc:
   config: "init_kyc"
   nextRequest: on_init_kyc
   preRequest: "kyc_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_init_kyc:
   type: "on_init"
@@ -118,7 +118,7 @@ on_init_kyc:
   config: "on_init_kyc"
   nextRequest: account_details_form
   preRequest: "init_kyc"
-  isCollapsed: false
+  isCollapsed: true
 
 account_details_form:
   type: "form"
@@ -127,7 +127,7 @@ account_details_form:
   config: "account_details_form"
   nextRequest: init_personal_loan
   preRequest: "on_init_kyc"
-  isCollapsed: false
+  isCollapsed: true
 
 init_personal_loan:
   type: "init"
@@ -137,7 +137,7 @@ init_personal_loan:
   config: "init_personal_loan"
   nextRequest: on_init_personal_loan
   preRequest: "account_details_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_init_personal_loan:
   type: "on_init"
@@ -146,7 +146,7 @@ on_init_personal_loan:
   config: "on_init_personal_loan"
   nextRequest: e_mandate_details_form
   preRequest: "init_personal_loan"
-  isCollapsed: false
+  isCollapsed: true
 
 e_mandate_details_form:
   type: "form"
@@ -155,7 +155,7 @@ e_mandate_details_form:
   config: "e_mandate_details_form"
   nextRequest: init_with_account_details
   preRequest: "on_init_personal_loan"
-  isCollapsed: false
+  isCollapsed: true
 
 init_with_account_details:
   type: "init"
@@ -165,7 +165,7 @@ init_with_account_details:
   config: "init_with_account_details"
   nextRequest: on_init_with_account_details
   preRequest: "e_mandate_details_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_init_with_account_details:
   type: "on_init"
@@ -174,7 +174,7 @@ on_init_with_account_details:
   config: "on_init_with_account_details"
   nextRequest: loan_agreement_form
   preRequest: "init_with_account_details"
-  isCollapsed: false
+  isCollapsed: true
 
 loan_agreement_form:
   type: "form"
@@ -183,7 +183,7 @@ loan_agreement_form:
   config: "loan_agreement_form"
   nextRequest: confirm
   preRequest: "on_init_with_account_details"
-  isCollapsed: false
+  isCollapsed: true
 
 confirm:
   type: "confirm"
@@ -193,7 +193,7 @@ confirm:
   config: "confirm"
   nextRequest: on_confirm
   preRequest: "loan_agreement_form"
-  isCollapsed: false
+  isCollapsed: true
 
 on_confirm:
   type: "on_confirm"
@@ -202,7 +202,7 @@ on_confirm:
   config: "on_confirm"
   nextRequest: update
   preRequest: "confirm"
-  isCollapsed: false
+  isCollapsed: true
 
 update:
   type: "update"
@@ -212,7 +212,7 @@ update:
   config: "update"
   nextRequest: on_update
   preRequest: "on_confirm"
-  isCollapsed: false
+  isCollapsed: true
 
 on_update:
   type: "on_update"
@@ -221,7 +221,7 @@ on_update:
   config: "on_update"
   nextRequest: status
   preRequest: "update"
-  isCollapsed: false
+  isCollapsed: true
 
 status:
   type: "status"
@@ -231,7 +231,7 @@ status:
   config: "status"
   nextRequest: on_status
   preRequest: "on_update"
-  isCollapsed: false
+  isCollapsed: true
 
 on_status:
   type: "on_status"
@@ -240,4 +240,4 @@ on_status:
   config: "on_status"
   nextRequest: null
   preRequest: "status"
-  isCollapsed: false
+  isCollapsed: true
