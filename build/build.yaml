@@ -919,7 +919,7 @@ flows:
           summary: Submission Id revieved after form submission
       select:
         - name: Parent Id
-          key: parentID
+          key: parentItemId
           type: select
           extractionPath: >-
             businessPayload[].itemDetails[]{key: parentItemId, value:

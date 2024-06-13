@@ -96,7 +96,7 @@ search_2:
 
 select:
   - name: "Parent Id"
-    key: "parentID"
+    key: "parentItemId"
     type: "select"
     extractionPath: "businessPayload[].itemDetails[]{key: parentItemId, value: parentItemId}"
     errorText: "Form Id is required"
