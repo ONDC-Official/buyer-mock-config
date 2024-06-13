@@ -92,7 +92,7 @@ loan_amount_adjust_form:
   preRequest: "on_select"
   isCollapsed: true
 
-select_2:
+select_1:
   type: "select"
   target: "NP"
   executed: false
@@ -102,7 +102,7 @@ select_2:
   preRequest: "loan_amount_adjust_form"
   isCollapsed: true
 
-on_select_2:
+on_select_1:
   type: "on_select"
   executed: false
   shouldRender: false

@@ -947,7 +947,7 @@ flows:
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
-      select_2:
+      select_1:
         - name: Submission ID
           key: adjustAmountSubmissionId
           type: text
@@ -1249,7 +1249,7 @@ flows:
         nextRequest: select_2
         preRequest: on_select
         isCollapsed: true
-      select_2:
+      select_1:
         type: select
         target: NP
         executed: false
@@ -1258,7 +1258,7 @@ flows:
         nextRequest: on_select_2
         preRequest: loan_amount_adjust_form
         isCollapsed: true
-      on_select_2:
+      on_select_1:
         type: on_select
         executed: false
         shouldRender: false
