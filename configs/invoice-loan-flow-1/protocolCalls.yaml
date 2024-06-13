@@ -60,8 +60,27 @@ on_search_2:
   executed: false
   shouldRender: false
   config: "on_search_2"
-  nextRequest: loan_amount_adjust_form
+  nextRequest: select
   preRequest: "search_2"
+  isCollapsed: true
+
+select:
+  type: "select"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "select"
+  nextRequest: "on_select"
+  preRequest: "on_search_2"
+  isCollapsed: true
+
+on_select:
+  type: "on_select"
+  executed: false
+  shouldRender: false
+  config: "on_select"
+  nextRequest: loan_amount_adjust_form
+  preRequest: "select"
   isCollapsed: true
 
 loan_amount_adjust_form:
@@ -69,27 +88,55 @@ loan_amount_adjust_form:
   executed: false
   shouldRender: false
   config: "loan_amount_adjust_form"
-  nextRequest: select_after_amount_adjust
-  preRequest: "on_search_2"
+  nextRequest: select_2
+  preRequest: "on_select"
   isCollapsed: true
 
-select_after_amount_adjust:
+select_2:
   type: "select"
   target: "NP"
   executed: false
   shouldRender: false
-  config: "select_after_amount_adjust"
-  nextRequest: "on_select_after_amount_adjust"
+  config: "select_2"
+  nextRequest: "on_select_2"
   preRequest: "loan_amount_adjust_form"
   isCollapsed: true
 
-on_select_after_amount_adjust:
+on_select_2:
   type: "on_select"
   executed: false
   shouldRender: false
-  config: "on_select_after_amount_adjust"
+  config: "on_select_2"
+  nextRequest: customer_info_form
+  preRequest: "select_2"
+  isCollapsed: true
+
+customer_info_form:
+  type: "form"
+  executed: false
+  shouldRender: false
+  config: "customer_info_form"
+  nextRequest: init
+  preRequest: "on_select_2"
+  isCollapsed: true
+
+init:
+  type: "init"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "init"
+  nextRequest: on_init
+  preRequest: "customer_info_form"
+  isCollapsed: true
+
+on_init:
+  type: "on_init"
+  executed: false
+  shouldRender: false
+  config: "on_init"
   nextRequest: kyc_form
-  preRequest: "select_after_amount_adjust"
+  preRequest: "init"
   isCollapsed: true
 
 kyc_form:
@@ -97,27 +144,27 @@ kyc_form:
   executed: false
   shouldRender: false
   config: "kyc_form"
-  nextRequest: init_kyc
-  preRequest: "on_select_after_amount_adjust"
+  nextRequest: init_1
+  preRequest: "on_init"
   isCollapsed: true
 
-init_kyc:
+init_1:
   type: "init"
   target: "NP"
   executed: false
   shouldRender: false
-  config: "init_kyc"
-  nextRequest: on_init_kyc
+  config: "init_1"
+  nextRequest: on_init_1
   preRequest: "kyc_form"
   isCollapsed: true
 
-on_init_kyc:
+on_init_1:
   type: "on_init"
   executed: false
   shouldRender: false
-  config: "on_init_kyc"
+  config: "on_init_1"
   nextRequest: account_details_form
-  preRequest: "init_kyc"
+  preRequest: "init_1"
   isCollapsed: true
 
 account_details_form:
@@ -125,27 +172,27 @@ account_details_form:
   executed: false
   shouldRender: false
   config: "account_details_form"
-  nextRequest: init_personal_loan
-  preRequest: "on_init_kyc"
+  nextRequest: init_2
+  preRequest: "on_init_1"
   isCollapsed: true
 
-init_personal_loan:
+init_2:
   type: "init"
   target: "NP"
   executed: false
   shouldRender: false
-  config: "init_personal_loan"
-  nextRequest: on_init_personal_loan
+  config: "init_2"
+  nextRequest: on_init_2
   preRequest: "account_details_form"
   isCollapsed: true
 
-on_init_personal_loan:
+on_init_2:
   type: "on_init"
   executed: false
   shouldRender: false
-  config: "on_init_personal_loan"
+  config: "on_init_2"
   nextRequest: e_mandate_details_form
-  preRequest: "init_personal_loan"
+  preRequest: "init_2"
   isCollapsed: true
 
 e_mandate_details_form:
@@ -153,27 +200,27 @@ e_mandate_details_form:
   executed: false
   shouldRender: false
   config: "e_mandate_details_form"
-  nextRequest: init_with_account_details
-  preRequest: "on_init_personal_loan"
+  nextRequest: init_3
+  preRequest: "on_init_2"
   isCollapsed: true
 
-init_with_account_details:
+init_3:
   type: "init"
   target: "NP"
   executed: false
   shouldRender: false
-  config: "init_with_account_details"
-  nextRequest: on_init_with_account_details
+  config: "init_3"
+  nextRequest: on_init_3
   preRequest: "e_mandate_details_form"
   isCollapsed: true
 
-on_init_with_account_details:
+on_init_3:
   type: "on_init"
   executed: false
   shouldRender: false
-  config: "on_init_with_account_details"
+  config: "on_init_3"
   nextRequest: loan_agreement_form
-  preRequest: "init_with_account_details"
+  preRequest: "init_3"
   isCollapsed: true
 
 loan_agreement_form:
@@ -182,7 +229,7 @@ loan_agreement_form:
   shouldRender: false
   config: "loan_agreement_form"
   nextRequest: confirm
-  preRequest: "on_init_with_account_details"
+  preRequest: "on_init_3"
   isCollapsed: true
 
 confirm:
