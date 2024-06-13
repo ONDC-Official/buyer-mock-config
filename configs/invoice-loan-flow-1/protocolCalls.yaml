@@ -88,7 +88,7 @@ loan_amount_adjust_form:
   executed: false
   shouldRender: false
   config: "loan_amount_adjust_form"
-  nextRequest: select_2
+  nextRequest: select_1
   preRequest: "on_select"
   isCollapsed: true
 
@@ -97,8 +97,8 @@ select_1:
   target: "NP"
   executed: false
   shouldRender: false
-  config: "select_2"
-  nextRequest: "on_select_2"
+  config: "select_1"
+  nextRequest: "on_select_1"
   preRequest: "loan_amount_adjust_form"
   isCollapsed: true
 
@@ -106,9 +106,9 @@ on_select_1:
   type: "on_select"
   executed: false
   shouldRender: false
-  config: "on_select_2"
+  config: "on_select_1"
   nextRequest: customer_info_form
-  preRequest: "select_2"
+  preRequest: "select_1"
   isCollapsed: true
 
 customer_info_form:
