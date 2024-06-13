@@ -930,9 +930,7 @@ flows:
         - name: Item Id
           key: selectItemID
           type: select
-          extractionPath: >-
-            businessPayload[].itemDetails[]{key: parentItemId, value:
-            parentItemId}
+          extractionPath: 'businessPayload[].itemDetails[]{key: id, value: id}'
           errorText: Form Id is required
           required: true
           summary: Item Id is the uniqure id of the seller
