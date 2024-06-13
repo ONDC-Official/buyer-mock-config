@@ -917,6 +917,25 @@ flows:
           errorText: Please select a field
           required: true
           summary: Submission Id revieved after form submission
+      select:
+        - name: Parent Id
+          key: parentID
+          type: select
+          extractionPath: >-
+            businessPayload[].itemDetails[]{key: parentItemId, value:
+            parentItemId}
+          errorText: Form Id is required
+          required: true
+          summary: Parent Id is the uniqure id of the seller
+        - name: Item Id
+          key: selectItemID
+          type: select
+          extractionPath: >-
+            businessPayload[].itemDetails[]{key: parentItemId, value:
+            parentItemId}
+          errorText: Form Id is required
+          required: true
+          summary: Item Id is the uniqure id of the seller
       loan_amount_adjust_form:
         - name: Form Url
           key: adjustAmountFormUrl
@@ -930,13 +949,76 @@ flows:
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
-      select_after_amount_adjust:
+      select_2:
         - name: Submission ID
           key: adjustAmountSubmissionId
           type: text
           errorText: Submission Id is required
           required: true
           summary: Submission Id revieved after form submission
+      customer_info_form:
+        - name: Form Url
+          key: customerInfoFormUrl
+          type: form
+          extractionPath: 'businessPayload[].formData[]{key: formUrl, value: formUrl}'
+          summary: Need to be filled to get the submission id
+        - name: Form Id
+          key: customerInfoFormId
+          type: select
+          extractionPath: 'businessPayload[].formData[]{key: id, value: id}'
+          errorText: Form Id is required
+          required: true
+          summary: Provider Id is the uniqure id of the seller
+      init:
+        - name: Submission ID
+          key: customerInfoSubmissionId
+          type: text
+          errorText: Submission Id is required
+          required: true
+          summary: Submission Id revieved after form submission
+        - name: Payment Status
+          key: paymentStatus
+          type: select
+          defaultOptions:
+            - key: PAID
+              value: PAID
+            - key: NOT-PAID
+              value: NOT-PAID
+          errorText: Please select a field
+          required: true
+          summary: Starting stop of the journey location
+        - name: Payment Type
+          key: paymentType
+          type: select
+          defaultValue: PRE-ORDER
+          defaultOptions:
+            - key: PRE-ORDER
+              value: PRE-ORDER
+            - key: PRE-FULFILLMENT
+              value: PRE-FULFILLMENT
+            - key: ON-FULFILLMENT
+              value: ON-FULFILLMENT
+            - key: POST-FULFILLMENT
+              value: POST-FULFILLMENT
+            - key: ON-ORDER
+              value: ON-ORDER
+          errorText: Please select a field
+          required: true
+          summary: Starting stop of the journey location
+        - name: Payment Tags
+          key: paymentTagsInit
+          type: multiline
+          defaultValue:
+            BUYER_FINDER_FEES:
+              BUYER_FINDER_FEES_TYPE: percent-annualized
+              BUYER_FINDER_FEES_PERCENTAGE: '1'
+            SETTLEMENT_TERMS:
+              DELAY_INTEREST: 2.5
+              STATIC_TERMS: >-
+                https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+          errorText: Payment Tags is required
+          required: true
+          summary: Starting stop of the journey location
       kyc_form:
         - name: Form Url
           key: kycFormUrl
@@ -950,7 +1032,7 @@ flows:
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
-      init_kyc:
+      init_1:
         - name: Submission ID
           key: kycSubmissionId
           type: text
@@ -1013,7 +1095,7 @@ flows:
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
-      init_personal_loan:
+      init_2:
         - name: Submission ID
           key: accointDetailsFormSubmissionId
           type: text
@@ -1033,7 +1115,7 @@ flows:
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
-      init_with_account_details:
+      init_3:
         - name: Submission ID
           key: eMandateDetailsSubmissionId
           type: text
