@@ -19,7 +19,6 @@ on_search:
 
 personal_info_form:
   type: "form"
-  formType: "text/html"
   formUrlKey: personalFormUrl
   executed: false
   shouldRender: false
@@ -87,6 +86,7 @@ on_select:
 
 loan_amount_adjust_form:
   type: "form"
+  formUrlKey: adjustAmountFormUrl
   executed: false
   shouldRender: false
   config: "loan_amount_adjust_form"
@@ -115,6 +115,7 @@ on_select_1:
 
 customer_info_form:
   type: "form"
+  formUrlKey: customerInfoFormUrl
   executed: false
   shouldRender: false
   config: "customer_info_form"
@@ -143,6 +144,7 @@ on_init:
 
 kyc_form:
   type: "form"
+  formUrlKey: kycFormUrl
   executed: false
   shouldRender: false
   config: "kyc_form"
@@ -171,6 +173,7 @@ on_init_1:
 
 account_details_form:
   type: "form"
+  formUrlKey: accointDetailsFormUrl
   executed: false
   shouldRender: false
   config: "account_details_form"
@@ -199,6 +202,7 @@ on_init_2:
 
 e_mandate_details_form:
   type: "form"
+  formUrlKey: eMandateDetailsFormUrl
   executed: false
   shouldRender: false
   config: "e_mandate_details_form"
@@ -227,6 +231,7 @@ on_init_3:
 
 loan_agreement_form:
   type: "form"
+  formUrlKey: loanAgreementFormUrl
   executed: false
   shouldRender: false
   config: "loan_agreement_form"

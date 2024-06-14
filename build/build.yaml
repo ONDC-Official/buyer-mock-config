@@ -1226,7 +1226,6 @@ flows:
         isCollapsed: true
       personal_info_form:
         type: form
-        formType: text/html
         formUrlKey: personalFormUrl
         executed: false
         shouldRender: false
@@ -1287,6 +1286,7 @@ flows:
         isCollapsed: true
       loan_amount_adjust_form:
         type: form
+        formUrlKey: adjustAmountFormUrl
         executed: false
         shouldRender: false
         config: loan_amount_adjust_form
@@ -1312,6 +1312,7 @@ flows:
         isCollapsed: true
       customer_info_form:
         type: form
+        formUrlKey: customerInfoFormUrl
         executed: false
         shouldRender: false
         config: customer_info_form
@@ -1337,6 +1338,7 @@ flows:
         isCollapsed: true
       kyc_form:
         type: form
+        formUrlKey: kycFormUrl
         executed: false
         shouldRender: false
         config: kyc_form
@@ -1362,6 +1364,7 @@ flows:
         isCollapsed: true
       account_details_form:
         type: form
+        formUrlKey: accointDetailsFormUrl
         executed: false
         shouldRender: false
         config: account_details_form
@@ -1387,6 +1390,7 @@ flows:
         isCollapsed: true
       e_mandate_details_form:
         type: form
+        formUrlKey: eMandateDetailsFormUrl
         executed: false
         shouldRender: false
         config: e_mandate_details_form
@@ -1412,6 +1416,7 @@ flows:
         isCollapsed: true
       loan_agreement_form:
         type: form
+        formUrlKey: loanAgreementFormUrl
         executed: false
         shouldRender: false
         config: loan_agreement_form
