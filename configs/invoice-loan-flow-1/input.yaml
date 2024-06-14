@@ -157,6 +157,7 @@ init:
   - name: "Payment Status"
     key: "paymentStatus"
     type: "select"
+    defaultValue: "NOT-PAID"
     defaultOptions:
       - key: "PAID"
         value: "PAID"
@@ -219,7 +220,7 @@ init_1:
     required: true
     summary: Submission Id revieved after form submission
   - name: "Payment Status"
-    key: "paymentStatus"
+    key: "paymentStatusInit1"
     type: "select"
     defaultOptions:
       - key: "PAID"
