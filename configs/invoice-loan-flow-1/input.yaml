@@ -115,7 +115,7 @@ loan_amount_adjust_form:
     key: adjustAmountFormUrl
     type: "form"
     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
-    submissionIdFieldKey: personalInfoSubmissionId
+    submissionIdFieldKey: adjustAmountSubmissionId
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "formIdAmountAdjustForm"
