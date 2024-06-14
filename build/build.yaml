@@ -1042,6 +1042,7 @@ flows:
         - name: Payment Status
           key: paymentStatusInit1
           type: select
+          defaultValue: NOT-PAID
           defaultOptions:
             - key: PAID
               value: PAID
@@ -1073,9 +1074,11 @@ flows:
           type: multiline
           defaultValue:
             BUYER_FINDER_FEES:
+              display: false
               BUYER_FINDER_FEES_TYPE: percent-annualized
               BUYER_FINDER_FEES_PERCENTAGE: '1'
             SETTLEMENT_TERMS:
+              display: false
               DELAY_INTEREST: 2.5
               STATIC_TERMS: >-
                 https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
