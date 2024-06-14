@@ -1087,6 +1087,7 @@ flows:
           key: accointDetailsFormUrl
           type: form
           extractionPath: 'businessPayload[].formData[]{key: formUrl, value: formUrl}'
+          submissionIdFieldKey: accointDetailsFormSubmissionId
           summary: Need to be filled to get the submission id
         - name: Form Id
           key: accointDetailsFormId
@@ -1142,6 +1143,35 @@ flows:
           errorText: Submission Id is required
           required: true
           summary: Submission Id revieved after form submission
+        - name: Payment Status
+          key: paymentStatusConfirm
+          type: select
+          defaultOptions:
+            - key: PAID
+              value: PAID
+            - key: NOT-PAID
+              value: NOT-PAID
+          errorText: Please select a field
+          required: true
+          summary: Starting stop of the journey location
+        - name: Payment Type
+          key: paymentTypeConfirm
+          type: select
+          defaultValue: PRE-ORDER
+          defaultOptions:
+            - key: PRE-ORDER
+              value: PRE-ORDER
+            - key: PRE-FULFILLMENT
+              value: PRE-FULFILLMENT
+            - key: ON-FULFILLMENT
+              value: ON-FULFILLMENT
+            - key: POST-FULFILLMENT
+              value: POST-FULFILLMENT
+            - key: ON-ORDER
+              value: ON-ORDER
+          errorText: Please select a field
+          required: true
+          summary: Starting stop of the journey location
       update:
         - name: Order Id
           key: orderId
