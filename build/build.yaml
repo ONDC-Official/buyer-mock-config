@@ -1156,6 +1156,7 @@ flows:
         - name: Payment Status
           key: paymentStatusConfirm
           type: select
+          defaultValue: PAID
           defaultOptions:
             - key: PAID
               value: PAID
