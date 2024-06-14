@@ -19,6 +19,8 @@ on_search:
 
 personal_info_form:
   type: "form"
+  formType: "text/html"
+  formUrlKey: personalFormUrl
   executed: false
   shouldRender: false
   config: "personal_info_form"
