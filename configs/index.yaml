@@ -23,3 +23,10 @@ flows:
     additionalFlows:
       - key: Missed-EMI Payment
         value: invoice-loan-missed-emi-flow-1
+  - summary: Missed-EMI Payment
+    id: invoice-loan-missed-emi-flow-1
+    shouldDispaly: false
+    input:
+      $ref: ./invoice-loan-missed-emi-flow-1/input.yaml
+    calls:
+      $ref: ./invoice-loan-missed-emi-flow-1/protocolCalls.yaml

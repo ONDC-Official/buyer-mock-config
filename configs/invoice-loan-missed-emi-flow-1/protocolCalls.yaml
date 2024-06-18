@@ -1,0 +1,18 @@
+search:
+  type: "search"
+  target: "GATEWAY"
+  executed: false
+  shouldRender: true
+  config: "search"
+  nextRequest: "on_search"
+  preRequest: null
+  isCollapsed: false
+
+on_search:
+  type: "on_search"
+  executed: false
+  shouldRender: false
+  config: "on_search"
+  nextRequest: "personal_info_form"
+  preRequest: "search"
+  isCollapsed: false

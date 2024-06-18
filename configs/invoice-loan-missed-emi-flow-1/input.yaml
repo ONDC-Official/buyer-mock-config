@@ -1,0 +1,24 @@
+search:
+  - name: "Loan Category"
+    key: "loanCategaory"
+    type: "text"
+    errorText: "Vehicle category is required"
+    defaultValue: INVOICE_BASED_LOAN
+    required: true
+    summary: This attribute refers to categorizing loans based on whether they are intended for personal use or are meant for invoices.
+  - name: "Payment Tags"
+    key: "paymentTagsSearch"
+    type: "multiline"
+    defaultValue:
+      BUYER_FINDER_FEES:
+        display: false
+        BUYER_FINDER_FEES_TYPE: percent-annualized
+        BUYER_FINDER_FEES_PERCENTAGE: "1"
+      SETTLEMENT_TERMS:
+        display: false
+        DELAY_INTEREST: 2.5
+        STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+        OFFLINE_CONTRACT: "true"
+    errorText: "Payment tags is required"
+    required: true
+    summary: Describes tags

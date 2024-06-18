@@ -1478,3 +1478,52 @@ flows:
     additionalFlows:
       - key: Missed-EMI Payment
         value: invoice-loan-missed-emi-flow-1
+  - summary: Missed-EMI Payment
+    id: invoice-loan-missed-emi-flow-1
+    shouldDispaly: false
+    input:
+      search:
+        - name: Loan Category
+          key: loanCategaory
+          type: text
+          errorText: Vehicle category is required
+          defaultValue: INVOICE_BASED_LOAN
+          required: true
+          summary: >-
+            This attribute refers to categorizing loans based on whether they
+            are intended for personal use or are meant for invoices.
+        - name: Payment Tags
+          key: paymentTagsSearch
+          type: multiline
+          defaultValue:
+            BUYER_FINDER_FEES:
+              display: false
+              BUYER_FINDER_FEES_TYPE: percent-annualized
+              BUYER_FINDER_FEES_PERCENTAGE: '1'
+            SETTLEMENT_TERMS:
+              display: false
+              DELAY_INTEREST: 2.5
+              STATIC_TERMS: >-
+                https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+              OFFLINE_CONTRACT: 'true'
+          errorText: Payment tags is required
+          required: true
+          summary: Describes tags
+    calls:
+      search:
+        type: search
+        target: GATEWAY
+        executed: false
+        shouldRender: true
+        config: search
+        nextRequest: on_search
+        preRequest: null
+        isCollapsed: false
+      on_search:
+        type: on_search
+        executed: false
+        shouldRender: false
+        config: on_search
+        nextRequest: personal_info_form
+        preRequest: search
+        isCollapsed: false
