@@ -1475,3 +1475,6 @@ flows:
         nextRequest: null
         preRequest: status
         isCollapsed: true
+    additionalFlows:
+      - key: Missed-EMI Payment
+        value: invoice-loan-missed-emi-flow-1

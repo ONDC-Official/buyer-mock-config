@@ -20,3 +20,6 @@ flows:
       $ref: ./invoice-loan-flow-1/input.yaml
     calls:
       $ref: ./invoice-loan-flow-1/protocolCalls.yaml
+    additionalFlows:
+      - key: Missed-EMI Payment
+        value: invoice-loan-missed-emi-flow-1
