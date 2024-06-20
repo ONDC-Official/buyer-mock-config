@@ -6,7 +6,7 @@ update:
   config: "update"
   nextRequest: on_update
   preRequest: "null"
-  isCollapsed: true
+  isCollapsed: false
 
 on_update:
   type: "on_update"
@@ -15,4 +15,4 @@ on_update:
   config: "on_update"
   nextRequest: null
   preRequest: "update"
-  isCollapsed: true
+  isCollapsed: false
