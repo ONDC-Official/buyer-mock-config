@@ -1483,6 +1483,7 @@ flows:
     shouldDispaly: false
     sessionData:
       additionalFlowStartPoint: update
+      additionalFlowActive: false
     input:
       update:
         - name: Order Id

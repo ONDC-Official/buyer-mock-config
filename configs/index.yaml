@@ -28,6 +28,7 @@ flows:
     shouldDispaly: false
     sessionData:
       additionalFlowStartPoint: update
+      additionalFlowActive: false
     input:
       $ref: ./invoice-loan-missed-emi-flow-1/input.yaml
     calls:
