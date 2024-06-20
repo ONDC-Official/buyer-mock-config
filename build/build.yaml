@@ -1481,6 +1481,8 @@ flows:
   - summary: Missed-EMI Payment
     id: invoice-loan-missed-emi-flow-1
     shouldDispaly: false
+    sessionData:
+      additionalFlowStartPoint: update
     input:
       update:
         - name: Order Id
