@@ -1,18 +1,18 @@
-search:
-  type: "search"
-  target: "GATEWAY"
+update:
+  type: "update"
+  target: "NP"
   executed: false
   shouldRender: false
-  config: "search"
-  nextRequest: "on_search"
-  preRequest: null
-  isCollapsed: false
+  config: "update"
+  nextRequest: on_update
+  preRequest: "null"
+  isCollapsed: true
 
-on_search:
-  type: "on_search"
+on_update:
+  type: "on_update"
   executed: false
   shouldRender: false
-  config: "on_search"
-  nextRequest: "personal_info_form"
-  preRequest: "search"
-  isCollapsed: false
+  config: "on_update"
+  nextRequest: null
+  preRequest: "update"
+  isCollapsed: true
