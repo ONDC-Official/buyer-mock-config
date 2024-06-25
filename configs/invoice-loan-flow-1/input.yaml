@@ -86,7 +86,7 @@ search_1:
   - name: "Consent Status"
     key: "search1FormStatus"
     type: "select"
-    defaultValue: "APPROVED"
+    defaultValue: "SUCCESS"
     defaultOptions:
       - key: "APPROVED"
         value: "APPROVED"
@@ -144,6 +144,16 @@ select_1:
     errorText: "Submission Id is required"
     required: true
     summary: Submission Id revieved after form submission
+  - name: "Consent Status"
+    key: "selectFormStatus"
+    type: "select"
+    defaultValue: "SUCCESS"
+    defaultOptions:
+      - key: "APPROVED"
+        value: "APPROVED"
+    errorText: "Please select a field"
+    required: true
+    summary: Submission Id revieved after form submission
 
 customer_info_form:
   - name: Form Url
@@ -164,6 +174,16 @@ init:
     key: customerInfoSubmissionId
     type: "text"
     errorText: "Submission Id is required"
+    required: true
+    summary: Submission Id revieved after form submission
+  - name: "Consent Status"
+    key: "initFormStatus"
+    type: "select"
+    defaultValue: "SUCCESS"
+    defaultOptions:
+      - key: "APPROVED"
+        value: "APPROVED"
+    errorText: "Please select a field"
     required: true
     summary: Submission Id revieved after form submission
   - name: "Payment Status"
