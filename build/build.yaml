@@ -908,9 +908,19 @@ flows:
           errorText: Submission Id is required
           required: true
           summary: Submission Id revieved after form submission
+        - name: Consent Status
+          key: search1FormStatus
+          type: select
+          defaultValue: APPROVED
+          defaultOptions:
+            - key: APPROVED
+              value: APPROVED
+          errorText: Please select a field
+          required: true
+          summary: Submission Id revieved after form submission
       search_2:
         - name: Consent Status
-          key: consentStatus
+          key: search2FormStatus
           type: select
           defaultValue: APPROVED
           defaultOptions:
