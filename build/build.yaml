@@ -846,11 +846,7 @@ flows:
         - name: BPP URI
           key: bpp_uri
           type: select
-          extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value:
-            bpp_uri}
-          extractionPathReplace: ${bpp_id}
-          extractionPathReplaceWith: data.session.bpp_id
+          extractionPath: '`businessPayload[]{key: bpp_uri, value: bpp_uri}`'
           errorText: BPP URI is required
           required: true
           summary: >-
