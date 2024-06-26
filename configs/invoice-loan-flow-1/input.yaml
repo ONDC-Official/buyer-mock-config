@@ -27,7 +27,7 @@ personal_info_form:
   - name: "BPP URI"
     key: "bpp_uri"
     type: "select"
-    extractionPath: "businessPayload[]{key: bpp_uri, value: bpp_uri}"
+    extractionPath: "businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}"
     # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value: bpp_uri}"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
@@ -44,11 +44,10 @@ personal_info_form:
   - name: Form Url
     key: personalFormUrl
     type: "form"
-    # extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: formUrl, value: formUrl}`"
-    extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
-    extractionPathReplace: "${bpp_id}"
-    extractionPathReplaceWith: data.session.bpp_id
-    submissionIdFieldKey: personalInfoSubmissionId
+    extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: formUrl, value: formUrl}`"
+    # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
+    # extractionPathReplace: "${bpp_id}"
+    # extractionPathReplaceWith: data.session.bpp_id
     summary: Need to be filled to get the submission id
   - name: "ProviderId"
     key: "providerId"
