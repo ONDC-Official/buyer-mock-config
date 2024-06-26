@@ -858,7 +858,7 @@ flows:
           extractionPath: >-
             `businessPayload[?(bpp_id ===
             '${data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`
-          summary: Need to be filled to get the submission id
+          summary: Needs to be filled to get the submission id
         - name: ProviderId
           key: providerId
           type: select

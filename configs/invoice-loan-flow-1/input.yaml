@@ -47,7 +47,7 @@ personal_info_form:
     # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
-    summary: Need to be filled to get the submission id
+    summary: Needs to be filled to get the submission id
   - name: "ProviderId"
     key: "providerId"
     type: "select"
