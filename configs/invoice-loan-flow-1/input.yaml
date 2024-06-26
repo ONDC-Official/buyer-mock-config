@@ -28,7 +28,6 @@ personal_info_form:
     key: "bpp_uri"
     type: "select"
     extractionPath: "`businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}`"
-    # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value: bpp_uri}"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
     errorText: "BPP URI is required"
