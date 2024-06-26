@@ -846,7 +846,7 @@ flows:
         - name: BPP URI
           key: bpp_uri
           type: select
-          extractionPath: 'businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}'
+          extractionPath: '`businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}`'
           errorText: BPP URI is required
           required: true
           summary: >-
