@@ -43,7 +43,7 @@ personal_info_form:
   - name: Form Url
     key: personalFormUrl
     type: "form"
-    extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: formUrl, value: formUrl}`"
+    extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`"
     # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
@@ -51,7 +51,7 @@ personal_info_form:
   - name: "ProviderId"
     key: "providerId"
     type: "select"
-    extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: providerId, value: providerId}`"
+    extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].formData[]{key: providerId, value: providerId}`"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
     errorText: "Provider Id is required"
@@ -60,7 +60,7 @@ personal_info_form:
   - name: "Form Id"
     key: "formId"
     type: "select"
-    extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: id, value: id}`"
+    extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].formData[]{key: id, value: id}`"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
     errorText: "Form Id is required"
@@ -69,7 +69,7 @@ personal_info_form:
   - name: "Item Id"
     key: "itemId"
     type: "select"
-    extractionPath: "`businessPayload[?(bpp_id === ${data.session.bpp_id})].formData[]{key: itemId, value: itemId}`"
+    extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].formData[]{key: itemId, value: itemId}`"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
     errorText: "item Id is required"
