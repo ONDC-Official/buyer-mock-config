@@ -863,10 +863,9 @@ flows:
           key: providerId
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key:
-            providerId, value: providerId}
-          extractionPathReplace: ${bpp_id}
-          extractionPathReplaceWith: data.session.bpp_id
+            `businessPayload[?(bpp_id ===
+            ${data.session.bpp_id})].formData[]{key: providerId, value:
+            providerId}`
           errorText: Provider Id is required
           required: true
           summary: >-
@@ -876,10 +875,8 @@ flows:
           key: formId
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: id,
-            value: id}
-          extractionPathReplace: ${bpp_id}
-          extractionPathReplaceWith: data.session.bpp_id
+            `businessPayload[?(bpp_id ===
+            ${data.session.bpp_id})].formData[]{key: id, value: id}`
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
@@ -887,10 +884,8 @@ flows:
           key: itemId
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: itemId,
-            value: itemId}
-          extractionPathReplace: ${bpp_id}
-          extractionPathReplaceWith: data.session.bpp_id
+            `businessPayload[?(bpp_id ===
+            ${data.session.bpp_id})].formData[]{key: itemId, value: itemId}`
           errorText: item Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
