@@ -27,7 +27,7 @@ personal_info_form:
   - name: "BPP URI"
     key: "bpp_uri"
     type: "select"
-    extractionPath: "`businessPayload[]{key: bpp_uri, value: bpp_uri}`"
+    extractionPath: "businessPayload[]{key: bpp_uri, value: bpp_uri}"
     # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value: bpp_uri}"
     # extractionPathReplace: "${bpp_id}"
     # extractionPathReplaceWith: data.session.bpp_id
