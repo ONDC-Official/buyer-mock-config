@@ -950,7 +950,7 @@ flows:
           type: select
           extractionPath: '`businessPayload[].formData[]{key: formUrl, value: formUrl}`'
           submissionIdFieldKey: adjustAmountSubmissionId
-          summary: Need to be filled to get the submission id
+          summary: Needs to be filled to get the submission id
         - name: Form Id
           key: formIdAmountAdjustForm
           type: select
