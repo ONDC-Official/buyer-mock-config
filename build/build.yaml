@@ -856,15 +856,15 @@ flows:
           key: personalFormUrl
           type: form
           extractionPath: >-
-            `businessPayload[?(bpp_id ===
-            '${data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`
+            `businessPayload[?(bpp_id === '${formData.bpp_id ||
+            data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`
           summary: Needs to be filled to get the submission id
         - name: ProviderId
           key: providerId
           type: select
           extractionPath: >-
-            `businessPayload[?(bpp_id ===
-            '${data.session.bpp_id}')].formData[]{key: providerId, value:
+            `businessPayload[?(bpp_id === '${formData.bpp_id ||
+            data.session.bpp_id}')].formData[]{key: providerId, value:
             providerId}`
           errorText: Provider Id is required
           required: true
@@ -875,8 +875,8 @@ flows:
           key: formId
           type: select
           extractionPath: >-
-            `businessPayload[?(bpp_id ===
-            '${data.session.bpp_id}')].formData[]{key: id, value: id}`
+            `businessPayload[?(bpp_id === '${formData.bpp_id ||
+            data.session.bpp_id}')].formData[]{key: id, value: id}`
           errorText: Form Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
@@ -884,8 +884,8 @@ flows:
           key: itemId
           type: select
           extractionPath: >-
-            `businessPayload[?(bpp_id ===
-            '${data.session.bpp_id}')].formData[]{key: itemId, value: itemId}`
+            `businessPayload[?(bpp_id === '${formData.bpp_id ||
+            data.session.bpp_id}')].formData[]{key: itemId, value: itemId}`
           errorText: item Id is required
           required: true
           summary: Provider Id is the uniqure id of the seller
