@@ -115,7 +115,7 @@ select:
 loan_amount_adjust_form:
   - name: Form Url
     key: adjustAmountFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     submissionIdFieldKey: adjustAmountSubmissionId
     summary: Need to be filled to get the submission id
@@ -148,7 +148,7 @@ select_1:
 customer_info_form:
   - name: Form Url
     key: customerInfoFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
@@ -228,7 +228,7 @@ init:
 kyc_form:
   - name: Form Url
     key: kycFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
@@ -295,7 +295,7 @@ init_1:
 account_details_form:
   - name: Form Url
     key: accointDetailsFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     submissionIdFieldKey: accointDetailsFormSubmissionId
     summary: Need to be filled to get the submission id
@@ -318,7 +318,7 @@ init_2:
 e_mandate_details_form:
   - name: Form Url
     key: eMandateDetailsFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
@@ -340,7 +340,7 @@ init_3:
 loan_agreement_form:
   - name: Form Url
     key: loanAgreementFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
