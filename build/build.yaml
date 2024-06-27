@@ -846,7 +846,7 @@ flows:
         - name: BPP ID
           key: bpp_id
           type: select
-          extractionPath: '`businessPayload[]{key: bpp_id, value: bpp_id, bpp_uri: bpp_uri}`'
+          extractionPath: '`businessPayload[]{key: bpp_id, value: bpp_id}`'
           defaultValueExpression: data.session.bpp_id
           errorText: BPP ID is required
           required: true
