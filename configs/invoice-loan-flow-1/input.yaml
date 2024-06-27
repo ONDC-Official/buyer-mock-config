@@ -24,25 +24,26 @@ search:
     summary: Describes tags
 
 personal_info_form:
-  - name: "BPP URI"
-    key: "bpp_uri"
-    type: "select"
-    extractionPath: "`businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}`"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
-    errorText: "BPP URI is required"
-    required: true
-    summary: The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
-  # - name: "BPP ID"
-  #   key: "bpp_id"
+  # - name: "BPP URI"
+  #   key: "bpp_uri"
   #   type: "select"
-  #   extractionPath: "businessPayload[]{key: bpp_id, value: bpp_id}"
-  #   errorText: "BPP ID is required"
+  #   extractionPath: "`businessPayload[]{key: bpp_uri, value: bpp_uri, bpp_id: bpp_id}`"
+  #   # extractionPathReplace: "${bpp_id}"
+  #   # extractionPathReplaceWith: data.session.bpp_id
+  #   errorText: "BPP URI is required"
   #   required: true
-  #   summary: It explains the Explains the subscriber of the Seller App (BPP).
+  #   summary: The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+  - name: "BPP ID"
+    key: "bpp_id"
+    type: "select"
+    extractionPath: "`businessPayload[]{key: bpp_id, value: bpp_id, bpp_uri: bpp_uri}`"
+    defaultValueExpression: "data.session.bpp_id"
+    errorText: "BPP ID is required"
+    required: true
+    summary: It explains the Explains the subscriber of the Seller App (BPP).
   - name: Form Url
     key: personalFormUrl
-    type: "form"
+    type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`"
     # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
     # extractionPathReplace: "${bpp_id}"
