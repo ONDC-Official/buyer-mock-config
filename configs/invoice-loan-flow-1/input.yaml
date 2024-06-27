@@ -36,8 +36,6 @@ personal_info_form:
     key: "bpp_uri"
     type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')]{key: bpp_uri, value: bpp_uri}`"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
     errorText: "BPP URI is required"
     required: true
     summary: The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
@@ -45,16 +43,11 @@ personal_info_form:
     key: personalFormUrl
     type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].formData[]{key: formUrl, value: formUrl}`"
-    # extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
     summary: Needs to be filled to get the submission id
   - name: "ProviderId"
     key: "providerId"
     type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].formData[]{key: providerId, value: providerId}`"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
     errorText: "Provider Id is required"
     required: true
     summary: This refers to the unique id of the provider whose catalog items have been selected.
@@ -62,8 +55,6 @@ personal_info_form:
     key: "formId"
     type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].formData[]{key: id, value: id}`"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -71,8 +62,6 @@ personal_info_form:
     key: "itemId"
     type: "select"
     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].formData[]{key: itemId, value: itemId}`"
-    # extractionPathReplace: "${bpp_id}"
-    # extractionPathReplaceWith: data.session.bpp_id
     errorText: "item Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -89,8 +78,8 @@ search_1:
     type: "select"
     defaultValue: "SUCCESS"
     defaultOptions:
-      - key: "APPROVED"
-        value: "APPROVED"
+      - key: "SUCCESS"
+        value: "SUCCESS"
     errorText: "Please select a field"
     required: true
     summary: Submission Id revieved after form submission
@@ -111,14 +100,14 @@ select:
   - name: "Parent Id"
     key: "parentItemId"
     type: "select"
-    extractionPath: "businessPayload[].itemDetails[]{key: parentItemId, value: parentItemId}"
+    extractionPath: "`businessPayload[].itemDetails[]{key: parentItemId, value: parentItemId}`"
     errorText: "Form Id is required"
     required: true
     summary: Parent Id is the uniqure id of the seller
   - name: "Item Id"
     key: "selectItemID"
     type: "select"
-    extractionPath: "businessPayload[].itemDetails[]{key: itemID, value: itemID}"
+    extractionPath: "`businessPayload[].itemDetails[]{key: itemID, value: itemID}`"
     errorText: "Form Id is required"
     required: true
     summary: Item Id is the uniqure id of the seller
@@ -127,13 +116,13 @@ loan_amount_adjust_form:
   - name: Form Url
     key: adjustAmountFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     submissionIdFieldKey: adjustAmountSubmissionId
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "formIdAmountAdjustForm"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -150,8 +139,8 @@ select_1:
     type: "select"
     defaultValue: "SUCCESS"
     defaultOptions:
-      - key: "APPROVED"
-        value: "APPROVED"
+      - key: "SUCCESS"
+        value: "SUCCESS"
     errorText: "Please select a field"
     required: true
     summary: Submission Id revieved after form submission
@@ -160,12 +149,12 @@ customer_info_form:
   - name: Form Url
     key: customerInfoFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "customerInfoFormId"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -182,8 +171,8 @@ init:
     type: "select"
     defaultValue: "SUCCESS"
     defaultOptions:
-      - key: "APPROVED"
-        value: "APPROVED"
+      - key: "SUCCESS"
+        value: "SUCCESS"
     errorText: "Please select a field"
     required: true
     summary: Submission Id revieved after form submission
@@ -240,12 +229,12 @@ kyc_form:
   - name: Form Url
     key: kycFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "kycFormId"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -307,13 +296,13 @@ account_details_form:
   - name: Form Url
     key: accointDetailsFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     submissionIdFieldKey: accointDetailsFormSubmissionId
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "accointDetailsFormId"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -330,12 +319,12 @@ e_mandate_details_form:
   - name: Form Url
     key: eMandateDetailsFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "eMandateDetailsFormId"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
@@ -352,12 +341,12 @@ loan_agreement_form:
   - name: Form Url
     key: loanAgreementFormUrl
     type: "form"
-    extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+    extractionPath: "`businessPayload[].formData[]{key: formUrl, value: formUrl}`"
     summary: Need to be filled to get the submission id
   - name: "Form Id"
     key: "loanAgreementFormId"
     type: "select"
-    extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+    extractionPath: "`businessPayload[].formData[]{key: id, value: id}`"
     errorText: "Form Id is required"
     required: true
     summary: Provider Id is the uniqure id of the seller
