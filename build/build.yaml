@@ -1288,6 +1288,9 @@ flows:
         nextRequest: on_search_2
         preRequest: on_search_1
         isCollapsed: true
+        isSkipable:
+          condition: session.search1FormStatus === 'SUCCESS'
+          nextRequest: select
       on_search_2:
         type: on_search
         executed: false
