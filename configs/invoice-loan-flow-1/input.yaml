@@ -80,6 +80,7 @@ search_1:
     defaultOptions:
       - key: "SUCCESS"
         value: "SUCCESS"
+        dummyData: "hahaha"
     errorText: "Please select a field"
     required: true
     summary: Submission Id revieved after form submission
