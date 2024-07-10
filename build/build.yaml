@@ -1105,22 +1105,6 @@ flows:
           errorText: Please select a field
           required: true
           summary: Starting stop of the journey location
-        - name: Payment Tags
-          key: paymentTagsInit
-          type: multiline
-          defaultValue:
-            BUYER_FINDER_FEES:
-              display: false
-              BUYER_FINDER_FEES_TYPE: percent-annualized
-              BUYER_FINDER_FEES_PERCENTAGE: '1'
-            SETTLEMENT_TERMS:
-              display: false
-              DELAY_INTEREST: 2.5
-              STATIC_TERMS: >-
-                https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
-          errorText: Payment Tags is required
-          required: true
-          summary: Starting stop of the journey location
       account_details_form:
         - name: Form Url
           key: accointDetailsFormUrl
