@@ -1196,6 +1196,25 @@ flows:
           errorText: Please select a field
           required: true
           summary: Starting stop of the journey location
+        - name: Payment Tags
+          key: paymentTagsConfirm
+          type: multiline
+          defaultValue:
+            BUYER_FINDER_FEES:
+              BUYER_FINDER_FEES_TYPE: percent-annualized
+              display: false
+              BUYER_FINDER_FEES_PERCENTAGE: '1'
+            SETTLEMENT_TERMS:
+              SETTLEMENT_TYPE: neft
+              display: false
+              DELAY_INTEREST: '5'
+              STATIC_TERMS: >-
+                https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
+              SETTLEMENT_AMOUNT: '12312'
+              OFFLINE_CONTRACT: 'true'
+          errorText: Payment Tags is required
+          required: true
+          summary: Starting stop of the journey location
       update:
         - name: Order Id
           key: orderId
