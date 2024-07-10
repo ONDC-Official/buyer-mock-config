@@ -1041,12 +1041,12 @@ flows:
           type: multiline
           defaultValue:
             BUYER_FINDER_FEES:
-              display: false
               BUYER_FINDER_FEES_TYPE: percent-annualized
+              display: false
               BUYER_FINDER_FEES_PERCENTAGE: '1'
             SETTLEMENT_TERMS:
-              display: false
               SETTLEMENT_TYPE: neft
+              display: false
               DELAY_INTEREST: '5'
               STATIC_TERMS: >-
                 https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan
