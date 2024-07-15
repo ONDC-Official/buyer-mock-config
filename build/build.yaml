@@ -1510,6 +1510,8 @@ flows:
     additionalFlows:
       - key: Missed-EMI Payment
         value: invoice-loan-missed-emi-flow-1
+      - key: Pre-Part Payment
+        value: invoice-loan-per-part-payment-flow-1
   - summary: Missed-EMI Payment
     id: invoice-loan-missed-emi-flow-1
     shouldDispaly: false
@@ -1524,6 +1526,59 @@ flows:
           errorText: Order Id is required
           required: true
           summary: Order Id revieved after form submission
+    calls:
+      update:
+        type: update
+        target: NP
+        executed: false
+        shouldRender: false
+        config: update
+        nextRequest: on_update
+        preRequest: 'null'
+        isCollapsed: false
+      on_update:
+        type: on_update
+        executed: false
+        shouldRender: false
+        config: on_update
+        nextRequest: null
+        preRequest: update
+        isCollapsed: false
+  - summary: Pre-Part Payment
+    id: invoice-loan-per-part-payment-flow-1
+    shouldDispaly: false
+    sessionData:
+      additionalFlowStartPoint: update
+      additionalFlowActive: false
+    input:
+      update:
+        - name: Order Id
+          key: orderId
+          type: text
+          errorText: Order Id is required
+          required: true
+          summary: Order Id revieved after form submission
+        - name: Label
+          key: prePartLabel
+          type: text
+          errorText: Label is required
+          required: true
+          summary: Label for update call
+          defaultValue: PRE_PART_PAYMENT
+        - name: Amount
+          key: prePartAmount
+          type: text
+          errorText: Amount is required
+          required: true
+          summary: Amount for update call
+          defaultValue: '92720'
+        - name: Currency
+          key: prePartCurrency
+          type: text
+          errorText: Currency is required
+          required: true
+          summary: Currency for update call
+          defaultValue: INR
     calls:
       update:
         type: update
