@@ -25,6 +25,8 @@ flows:
         value: invoice-loan-missed-emi-flow-1
       - key: Pre-Part Payment
         value: invoice-loan-per-part-payment-flow-1
+      - key: Loan Foreclosure
+        value: invoice-loan-foreclosure-flow-1
   - summary: Missed-EMI Payment
     id: invoice-loan-missed-emi-flow-1
     shouldDispaly: false
@@ -45,3 +47,13 @@ flows:
       $ref: ./invoice-loan-per-part-payment-flow-1/input.yaml
     calls:
       $ref: ./invoice-loan-per-part-payment-flow-1/protocolCalls.yaml
+  - summary: Loan Foreclosure
+    id: invoice-loan-foreclosure-flow-1
+    shouldDispaly: false
+    sessionData:
+      additionalFlowStartPoint: update
+      additionalFlowActive: false
+    input:
+      $ref: ./invoice-loan-foreclosure-flow-1/input.yaml
+    calls:
+      $ref: ./invoice-loan-foreclosure-flow-1/protocolCalls.yaml
