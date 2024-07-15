@@ -1558,13 +1558,6 @@ flows:
           errorText: Order Id is required
           required: true
           summary: Order Id revieved after form submission
-        - name: Label
-          key: prePartLabel
-          type: text
-          errorText: Label is required
-          required: true
-          summary: Label for update call
-          defaultValue: PRE_PART_PAYMENT
         - name: Amount
           key: prePartAmount
           type: text
@@ -1572,13 +1565,6 @@ flows:
           required: true
           summary: Amount for update call
           defaultValue: '92720'
-        - name: Currency
-          key: prePartCurrency
-          type: text
-          errorText: Currency is required
-          required: true
-          summary: Currency for update call
-          defaultValue: INR
     calls:
       update:
         type: update
