@@ -78,8 +78,6 @@ select_1:
     errorText: "Submission Id is required"
     required: true
     summary: Submission Id revieved after form submission
-
-additional_info_form:
   - name: Form Url
     key: additionalInfoFormUrl
     type: "form"
