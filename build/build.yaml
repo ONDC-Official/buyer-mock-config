@@ -1,7 +1,7 @@
 flows:
   - summary: Metro
     id: metro-station-based-flow
-    shouldDispaly: false
+    shouldDispaly: true
     sessionData:
       additionalFlowStartPoint: update
       additionalFlowActive: false
