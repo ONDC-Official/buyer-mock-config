@@ -25,13 +25,13 @@ search:
 
 search_1:
   - name: "Station Code 1"
-    key: StationCodeIsRequired
+    key: StationCode1IsRequired
     type: "text"
     errorText: "Station 1 is required"
     required: true
     summary: Station 1 is required
   - name: "Station Code 2"
-    key: StationCodeIsRequired
+    key: StationCode2IsRequired
     type: "text"
     errorText: "Station 2 is required"
     required: true
