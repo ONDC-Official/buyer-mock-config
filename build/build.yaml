@@ -204,7 +204,7 @@ flows:
         shouldRender: false
         config: search_1
         nextRequest: on_search_1
-        preRequest: null
+        preRequest: on_search
         isCollapsed: true
       on_search_1:
         type: on_search
