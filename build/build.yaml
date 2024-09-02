@@ -73,12 +73,12 @@ flows:
           required: true
           summary: Station 2 is required
       select:
-        - name: Catagory ID
-          key: CatagoryId
+        - name: Item ID
+          key: ItemId
           type: text
-          errorText: Catagory Id is required
+          errorText: Item Id is required
           required: true
-          summary: Catagory Id revieved from the provider
+          summary: Item Id revieved from the provider
         - name: Quantity
           key: Quantity Of Ticket
           type: number
