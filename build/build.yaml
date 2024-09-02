@@ -56,8 +56,9 @@ flows:
           key: StationCode1IsRequired
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].location[]{key:
-            locationName, value: locationName}
+            businessPayload[?(bpp_id ===
+            '${data.session.bpp_id}')].location[]{key: locationName, value:
+            locationName}
           errorText: Station 1 is required
           required: true
           summary: Station 1 is required
@@ -65,8 +66,9 @@ flows:
           key: StationCode2IsRequired
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].location[]{key:
-            locationName, value: locationName}
+            businessPayload[?(bpp_id ===
+            '${data.session.bpp_id}')].location[]{key: locationName, value:
+            locationName}
           errorText: Station 2 is required
           required: true
           summary: Station 2 is required
