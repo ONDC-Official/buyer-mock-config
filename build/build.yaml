@@ -80,7 +80,7 @@ flows:
           required: true
           summary: Item Id revieved from the provider
         - name: Quantity
-          key: Quantity Of Ticket
+          key: QuantityOfTicket
           type: text
           errorText: Quantity is required
           required: true
