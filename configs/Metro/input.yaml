@@ -59,7 +59,7 @@ search_1:
 
 select:
   - name: Catagory ID
-    # key: CatagoryId #itemId
+    key: CatagoryId 
     type: "text"
     errorText: "Catagory Id is required"
     required: true

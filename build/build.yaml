@@ -74,6 +74,7 @@ flows:
           summary: Station 2 is required
       select:
         - name: Catagory ID
+          key: CatagoryId
           type: text
           errorText: Catagory Id is required
           required: true
