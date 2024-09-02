@@ -22,6 +22,8 @@ search:
     errorText: "Payment tags is required"
     required: true
     summary: Describes tags
+
+search_1:
   - name: "Station Code 1"
     key: StardStation
     type: "text"

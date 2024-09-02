@@ -32,6 +32,7 @@ flows:
           errorText: Payment tags is required
           required: true
           summary: Describes tags
+      search_1:
         - name: Station Code 1
           key: StardStation
           type: text
@@ -176,6 +177,23 @@ flows:
         config: on_search
         nextRequest: search_1
         preRequest: search
+        isCollapsed: true
+      search_1:
+        type: search
+        target: GATEWAY
+        executed: false
+        shouldRender: false
+        config: search
+        nextRequest: on_search
+        preRequest: null
+        isCollapsed: true
+      on_search_1:
+        type: on_search
+        executed: false
+        shouldRender: false
+        config: on_search_1
+        nextRequest: select
+        preRequest: search_1
         isCollapsed: true
       select:
         type: select
