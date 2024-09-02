@@ -23,7 +23,7 @@ search_1:
   executed: false
   shouldRender: false
   config: "search_1"
-  nextRequest: "on_search"
+  nextRequest: "on_search_1"
   preRequest: null
   isCollapsed: true
 
