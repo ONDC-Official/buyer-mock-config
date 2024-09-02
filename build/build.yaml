@@ -34,12 +34,13 @@ flows:
           summary: Describes tags
       search_1:
         - name: Station Code 1
-          key: StardStation
+          key: StationCodeIsRequired
           type: text
           errorText: Station 1 is required
           required: true
           summary: Station 1 is required
         - name: Station Code 2
+          key: StationCodeIsRequired
           type: text
           errorText: Station 2 is required
           required: true
