@@ -81,7 +81,7 @@ flows:
           summary: Item Id revieved from the provider
         - name: Quantity
           key: Quantity Of Ticket
-          type: number
+          type: text
           errorText: Quantity is required
           required: true
           summary: Quantity  revieved from the provider
