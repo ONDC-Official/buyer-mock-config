@@ -21,7 +21,7 @@ search_1:
   type: "search"
   target: "GATEWAY"
   executed: false
-  shouldRender: true
+  shouldRender: false
   config: "search"
   nextRequest: "on_search"
   preRequest: null

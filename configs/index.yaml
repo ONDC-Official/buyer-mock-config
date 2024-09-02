@@ -1,6 +1,6 @@
 flows: 
   - summary: Metro
-    id: metro-station-based-flow
+    id: metro-flow-1
     shouldDispaly: true
     sessionData:
       additionalFlowStartPoint: update

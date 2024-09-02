@@ -25,30 +25,30 @@ search:
 
 search_1:
   - name: "Station Code 1"
-    key: StationCodeIsRequired
+    key: StardStation
     type: "text"
     errorText: "Station 1 is required"
     required: true
     summary: Station 1 is required
   - name: "Station Code 2"
-    key: StationCodeIsRequired
+    # key: StationCodeIsRequired
     type: "text"
     errorText: "Station 2 is required"
     required: true
     summary: Station 2 is required 
 select:
   - name: Catagory ID
-    key: CatagoryId 
+    # key: CatagoryId #itemId
     type: "text"
     errorText: "Catagory Id is required"
     required: true
-    summary: Cata Id revieved from the provider
+    summary: Catagory Id revieved from the provider
   - name: Quantity 
     key: Quantity Of Ticket
     type: "number"
-    errorText: "Provider Id is required"
+    errorText: "Quantity is required"
     required: true
-    summary: Provider Id revieved from the provider        
+    summary: Quantity  revieved from the provider        
 init :
    - name: Provider ID
      key: ProviderId 
