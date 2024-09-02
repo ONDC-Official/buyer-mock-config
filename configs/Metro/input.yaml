@@ -36,6 +36,16 @@ search_1:
     errorText: "Station 2 is required"
     required: true
     summary: Station 2 is required 
+
+  - name: "BPP ID"
+    key: "bpp_id"
+    type: "select"
+    extractionPath: "`businessPayload[]{key: bpp_id, value: bpp_id}`"
+    defaultValueExpression: "data.session.bpp_id"
+    errorText: "BPP ID is required"
+    required: true
+    summary: It explains the Explains the subscriber of the Seller App (BPP).
+
 select:
   - name: Catagory ID
     # key: CatagoryId #itemId

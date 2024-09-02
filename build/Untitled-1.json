@@ -1,0 +1,15 @@
+{
+  "bpp_id": "ondc-staging.hatio.dev/ONDC/BPP/Metro/MetroAuth1",
+  "bpp_uri": "https://ondc-staging.hatio.dev/ONDC/BPP/Metro/MetroAuth1",
+  "location": [],
+  "items": [],
+  "error": {
+    "code": 30008,
+    "message": "Location unserviceable",
+    "description": "The provided city cannot be serviced"
+  },
+  "context": {
+    "message_id": "a686293b-4205-440b-8154-3ed2a27f7744"
+  }
+}
+
