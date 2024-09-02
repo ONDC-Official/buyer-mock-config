@@ -183,7 +183,7 @@ flows:
         target: GATEWAY
         executed: false
         shouldRender: false
-        config: search
+        config: search_1
         nextRequest: on_search
         preRequest: null
         isCollapsed: true
