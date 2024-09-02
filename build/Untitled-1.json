@@ -1,15 +1,110 @@
 {
-  "bpp_id": "ondc-staging.hatio.dev/ONDC/BPP/Metro/MetroAuth1",
-  "bpp_uri": "https://ondc-staging.hatio.dev/ONDC/BPP/Metro/MetroAuth1",
-  "location": [],
+  "name": "Innvonix tech solution",
+  "bpp_id": "ondc.dev.innvonix.in",
+  "bpp_uri": "https://ondc.dev.innvonix.in/",
+  "location": [
+    {
+      "locationName": "APMC"
+    },
+    {
+      "locationName": "JVRJ"
+    },
+    {
+      "locationName": "RNMS"
+    },
+    {
+      "locationName": "SRYS"
+    },
+    {
+      "locationName": "PLDI"
+    },
+    {
+      "locationName": "GRMS"
+    },
+    {
+      "locationName": "OHCI"
+    },
+    {
+      "locationName": "UPMS"
+    },
+    {
+      "locationName": "VRMS"
+    },
+    {
+      "locationName": "VDMS"
+    },
+    {
+      "locationName": "RNIP"
+    },
+    {
+      "locationName": "SBRS"
+    },
+    {
+      "locationName": "AEC"
+    },
+    {
+      "locationName": "SMMS"
+    },
+    {
+      "locationName": "MTRS"
+    },
+    {
+      "locationName": "TLJG"
+    },
+    {
+      "locationName": "TLTJ"
+    },
+    {
+      "locationName": "DDKN"
+    },
+    {
+      "locationName": "GKRD"
+    },
+    {
+      "locationName": "GJUV"
+    },
+    {
+      "locationName": "CMSR"
+    },
+    {
+      "locationName": "SPSD"
+    },
+    {
+      "locationName": "OHCI"
+    },
+    {
+      "locationName": "SHHP"
+    },
+    {
+      "locationName": "GEKA"
+    },
+    {
+      "locationName": "KPMS"
+    },
+    {
+      "locationName": "KKES"
+    },
+    {
+      "locationName": "ARPK"
+    },
+    {
+      "locationName": "ARVD"
+    },
+    {
+      "locationName": "RBCY"
+    },
+    {
+      "locationName": "VSTL"
+    },
+    {
+      "locationName": "NTCR"
+    },
+    {
+      "locationName": "VTLG"
+    }
+  ],
   "items": [],
-  "error": {
-    "code": 30008,
-    "message": "Location unserviceable",
-    "description": "The provided city cannot be serviced"
-  },
   "context": {
-    "message_id": "a686293b-4205-440b-8154-3ed2a27f7744"
+    "message_id": "ab550cd6-bdf3-45e3-bd7c-ea6cf4214b93"
   }
 }
-

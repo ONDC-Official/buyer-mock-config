@@ -35,13 +35,19 @@ flows:
       search_1:
         - name: Station Code 1
           key: StationCode1IsRequired
-          type: text
+          type: select
+          extractionPath: >-
+            `businessPayload[].location[]{key: StationCode1IsRequired, value:
+            locationName}`
           errorText: Station 1 is required
           required: true
           summary: Station 1 is required
         - name: Station Code 2
           key: StationCode2IsRequired
-          type: text
+          type: select
+          extractionPath: >-
+            `businessPayload[].location[]{key: StationCode2IsRequired, value:
+            locationName}`
           errorText: Station 2 is required
           required: true
           summary: Station 2 is required
