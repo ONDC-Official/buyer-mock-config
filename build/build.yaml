@@ -53,7 +53,7 @@ flows:
             The subscriber URL of the Seller App (BPP) is the endpoint that
             accepts callbacks from the Buyer App (BAP).
         - name: Station Code 1
-          key: StationCode1IsRequire
+          key: StationCode1IsRequired
           type: select
           extractionPath: >-
             `businessPayload[?(bpp_id ===
@@ -85,6 +85,12 @@ flows:
           errorText: Quantity is required
           required: true
           summary: Quantity  revieved from the provider
+        - name: Provider Id
+          key: ProviderId
+          type: text
+          errorText: Provider is required
+          required: true
+          summary: revieved from the provider
       init:
         - name: Provider ID
           key: ProviderId
