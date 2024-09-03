@@ -76,7 +76,7 @@ select:
   - name: Provider Id
     key: ProviderId
     type: "text"
-    defaultValueExpression: "data.session.provider_id
+    defaultValueExpression: "data.session.provider_id"
     errorText: "Provider is required"
     required: true
     summary:   revieved from the provider  

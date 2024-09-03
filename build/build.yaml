@@ -75,8 +75,12 @@ flows:
       select:
         - name: Item ID
           key: ItemId
-          type: text
-          errorText: Item Id is required
+          type: select
+          extractionPath: >-
+            businessPayload[?(bpp_id === '${bpp_id}')].items[]{key: name, value:
+            id}
+          extractionPathReplace: ${bpp_id}
+          extractionPathReplaceWith: formData.bpp_id
           required: true
           summary: Item Id revieved from the provider
         - name: Quantity
@@ -88,6 +92,7 @@ flows:
         - name: Provider Id
           key: ProviderId
           type: text
+          defaultValueExpression: data.session.provider_id
           errorText: Provider is required
           required: true
           summary: revieved from the provider
