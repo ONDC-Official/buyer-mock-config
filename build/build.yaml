@@ -53,7 +53,7 @@ flows:
             The subscriber URL of the Seller App (BPP) is the endpoint that
             accepts callbacks from the Buyer App (BAP).
         - name: Station Code 1
-          key: startPoint
+          key: StationCode1IsRequire
           type: select
           extractionPath: >-
             `businessPayload[?(bpp_id ===
@@ -63,7 +63,7 @@ flows:
           required: true
           summary: Station 1 is required
         - name: Station Code 2
-          key: endPoint
+          key: StationCode2IsRequired
           type: select
           extractionPath: >-
             `businessPayload[?(bpp_id ===
@@ -209,7 +209,7 @@ flows:
         isCollapsed: true
       search_1:
         type: search
-        target: GATEWAY
+        target: NP
         executed: false
         shouldRender: false
         config: search_1

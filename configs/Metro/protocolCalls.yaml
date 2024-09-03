@@ -19,7 +19,7 @@ on_search:
 
 search_1:
   type: "search"
-  target: "GATEWAY"
+  target: "NP"
   executed: false
   shouldRender: false
   config: "search_1"

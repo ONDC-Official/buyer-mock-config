@@ -41,14 +41,14 @@ search_1:
      summary: The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
 
    - name: "Station Code 1"
-     key: startPoint
+     key: StationCode1IsRequire
      type: "select"
      extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
      errorText: "Station 1 is required"
      required: true
      summary: Station 1 is required
    - name: "Station Code 2"
-     key: endPoint
+     key: StationCode2IsRequired
      type: "select"
      extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
      errorText: "Station 2 is required"
