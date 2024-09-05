@@ -90,6 +90,7 @@ init :
    - name: "Payment Status"
      key: "paymentStatus"
      type: "select"
+     defaultValue: "NOT-PAID"
      defaultOptions:
         - key: "PAID"
           value: "PAID"
@@ -133,6 +134,7 @@ confirm:
   - name: "Payment Status"
     key: "paymentStatusConfirm"
     type: "select"
+    defaultValue: "PAID"
     defaultOptions:
       - key: "PAID"
         value: "PAID"
