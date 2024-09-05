@@ -1,5 +1,5 @@
 flows:
-  - summary: Metro
+  - summary: message.intent.fulfillment.vehicle.category
     id: metro-flow-1
     shouldDispaly: true
     sessionData:
