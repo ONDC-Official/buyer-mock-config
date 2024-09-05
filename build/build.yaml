@@ -77,8 +77,8 @@ flows:
           key: itemId
           type: select
           extractionPath: >-
-            businessPayload[?(bpp_id === '${bpp_id}')].items[]{key: name, value:
-            id}
+            businessPayload[?(bpp_id === '${formData.bpp_id ||
+            data.session.bpp_id }')].items[]{key: name, value: id}
           extractionPathReplace: ${bpp_id}
           extractionPathReplaceWith: formData.bpp_id
           required: true
