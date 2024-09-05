@@ -78,7 +78,7 @@ flows:
           type: select
           extractionPath: >-
             `businessPayload[?(bpp_id === '${formData.bpp_id ||
-            data.session.bpp_id }')].items[]{key: name, value: id}`
+            data.session.bpp_id }')].items[]{key: id, value: id}`
           required: true
           summary: Item Id revieved from the provider
         - name: Quantity
