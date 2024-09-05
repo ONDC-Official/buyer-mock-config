@@ -160,23 +160,23 @@ confirm:
     required: true
     summary: Starting stop of the journey location 
 
-update:
-  - name: Order Id
-    key: orderId
-    type: "text"
-    errorText: "Order Id is required"
-    required: true
-    summary: Order Id revieved after form submission
-  - name: Order status
-    key: fulfillmentStatus
-    type: "select"
-    defaultValue: "APPROVED"
-    defaultOptions:
-      - key: "APPROVED"
-        value: "APPROVED"
-    errorText: "Please select a field"
-    required: true
-    summary: Order status is the status of fulfillment
+# update:
+#   - name: Order Id
+#     key: orderId
+#     type: "text"
+#     errorText: "Order Id is required"
+#     required: true
+#     summary: Order Id revieved after form submission
+#   - name: Order status
+#     key: fulfillmentStatus
+#     type: "select"
+#     defaultValue: "APPROVED"
+#     defaultOptions:
+#       - key: "APPROVED"
+#         value: "APPROVED"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Order status is the status of fulfillment
 
 status:
   - name: Order Id

@@ -89,28 +89,28 @@ on_confirm:
   executed: false
   shouldRender: false
   config: "on_confirm"
-  nextRequest: update
+  nextRequest: status
   preRequest: "confirm"
   isCollapsed: true
 
-update:
-  type: "update"
-  target: "NP"
-  executed: false
-  shouldRender: false
-  config: "update"
-  nextRequest: on_update
-  preRequest: "on_confirm"
-  isCollapsed: true
+# update:
+#   type: "update"
+#   target: "NP"
+#   executed: false
+#   shouldRender: false
+#   config: "update"
+#   nextRequest: on_update
+#   preRequest: "on_confirm"
+#   isCollapsed: true
 
-on_update:
-  type: "on_update"
-  executed: false
-  shouldRender: false
-  config: "on_update"
-  nextRequest: status
-  preRequest: "update"
-  isCollapsed: true
+# on_update:
+#   type: "on_update"
+#   executed: false
+#   shouldRender: false
+#   config: "on_update"
+#   nextRequest: status
+#   preRequest: "update"
+#   isCollapsed: true
 
 status:
   type: "status"
@@ -119,7 +119,7 @@ status:
   shouldRender: false
   config: "status"
   nextRequest: on_status
-  preRequest: "on_update"
+  preRequest: "on_confirm"
   isCollapsed: true
 
 on_status:
