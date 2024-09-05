@@ -43,14 +43,14 @@ search_1:
    - name: "Station Code 1"
      key: startPoint
      type: "select"
-     extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
+     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
      errorText: "Station 1 is required"
      required: true
      summary: Station 1 is required
    - name: "Station Code 2"
      key: endPoint
      type: "select"
-     extractionPath: "`businessPayload[?(bpp_id === '${data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
+     extractionPath: "`businessPayload[?(bpp_id === '${formData.bpp_id || data.session.bpp_id}')].location[]{key: locationName, value: locationName}`"
      errorText: "Station 2 is required"
      required: true
      summary: Station 2 is required 
@@ -59,7 +59,7 @@ search_1:
 
 select:
   - name: Item ID
-    key: ItemId 
+    key: itemId 
     type: "select"
     # errorText: "Item Id is required"
     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].items[]{key: name, value: id}"
@@ -68,13 +68,13 @@ select:
     required: true
     summary: Item Id revieved from the provider
   - name: Quantity 
-    key: QuantityOfTicket
+    key: quantity
     type: "text"
     errorText: "Quantity is required"
     required: true
     summary: Quantity  revieved from the provider  
   - name: Provider Id
-    key: ProviderId
+    key: providerId
     type: "text"
     defaultValueExpression: "data.session.provider_id"
     errorText: "Provider is required"
@@ -82,7 +82,7 @@ select:
     summary:   revieved from the provider  
 init :
    - name: Provider ID
-     key: ProviderId 
+     key: providerId 
      type: "text"
      errorText: "Provider Id is required"
      required: true
