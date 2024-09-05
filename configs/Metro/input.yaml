@@ -131,6 +131,12 @@ init :
      required: true
      summary: Starting stop of the journey location   
 confirm:
+  - name: PaymentID
+    key: paymentId
+    type: "text"
+    errorText: "paymentID is required"
+    required: true
+    summary: paymentid  revieved from the provider  
   - name: "Payment Status"
     key: "paymentStatusConfirm"
     type: "select"
