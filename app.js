@@ -1,10 +1,9 @@
 const $RefParser = require("json-schema-ref-parser");
-const yaml = require("js-yaml");
 const fs = require("fs");
-var uiPath = "./build/build.json";
-var yamlOutput = "./build/build.yaml";
 
 const indexYamlPath = "./configs/index.yaml";
+const outputFolderPath = "./build";
+const argsList = ["trv", "fis"];
 
 async function baseYMLFile(file) {
   try {
@@ -15,14 +14,37 @@ async function baseYMLFile(file) {
   }
 }
 
-baseYMLFile(indexYamlPath)
-  .then((res) => {
-    const jsonDump = JSON.stringify(res);
-    fs.writeFileSync(uiPath, jsonDump, "utf8");
+function outputBuild(outputPath, flow) {
+  fs.writeFileSync(
+    `${outputFolderPath}/${outputPath}`,
+    JSON.stringify(flow),
+    "utf8"
+  );
+}
 
-    const output = yaml.dump(res);
-    fs.writeFileSync(yamlOutput, output, "utf8");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// driver
+(async function driver() {
+  const args = process.argv[2];
+  let config = await baseYMLFile(indexYamlPath);
+  config = config?.configs;
+  if (!args) {
+    // run all flows
+    let path = { flows: [] };
+    for (const flow of config) {
+      path.flows.push(flow.path);
+    }
+    outputBuild("build.json", path);
+  } else {
+    if (!argsList.includes(args)) {
+      console.error(`
+        "${args}" not a valid parameter.
+        Possible valid parameter include: ${argsList}
+        `);
+      return;
+    }
+
+    // run only specific flow
+    const flow = config.find((element) => args === element.domain);
+    outputBuild(flow.filename, flow.path);
+  }
+})();
