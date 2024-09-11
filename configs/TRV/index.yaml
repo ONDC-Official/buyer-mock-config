@@ -1,0 +1,11 @@
+flows:
+  - summary: Metro
+    id: metro-flow-1
+    shouldDispaly: true
+    sessionData:
+      additionalFlowStartPoint: update
+      additionalFlowActive: false
+    input:
+      $ref: ./metro-flow-1/input.yaml
+    calls:
+      $ref: ./metro-flow-1/protocolCalls.yaml
